@@ -1,0 +1,46 @@
+.hero {
+  &_area {
+    min-height: 100vh;
+    display: flex;
+  }
+
+  &_title {
+    width: 100%;
+    z-index: 30;
+    position: relative;
+    animation: anim-text 1050ms cubic-bezier(0, 0.45, 0.15, 1);
+    font-size: 6vw;
+    line-height: 8vw;
+    margin-top: 70px;
+
+    &_sub {
+      font-size: 5vw;
+      line-height: 7vw;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  $marginLeft: 600px;
+
+  .hero {
+    &_details {
+      width: calc(100% - $marginLeft);
+      margin-left: $marginLeft;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    &_title {
+      font-size: 5.5vw;
+      line-height: 6vw;
+
+      &_sub {
+        font-size: 5vw;
+        line-height: 6vw;
+      }
+    }
+  }
+}

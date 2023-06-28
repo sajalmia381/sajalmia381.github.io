@@ -1,33 +1,33 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
+// // Custom Theming for Angular Material
+// // For more information: https://material.angular.io/guide/theming
+// @use '@angular/material' as mat;
+// // Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
+// // Include the common styles for Angular Material. We include this here so that you only
+// // have to load a single css file for Angular Material in your app.
+// // Be sure that you only ever include this mixin once!
+// @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$mia-primary: mat.define-palette(mat.$indigo-palette);
-$mia-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $mia-primary: mat.define-palette(mat.$indigo-palette);
+// $mia-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
-// The warn palette is optional (defaults to red).
-$mia-warn: mat.define-palette(mat.$red-palette);
+// // The warn palette is optional (defaults to red).
+// $mia-warn: mat.define-palette(mat.$red-palette);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$mia-theme: mat.define-light-theme((color: (primary: $mia-primary,
-        accent: $mia-accent,
-        warn: $mia-warn,
-      )));
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $mia-theme: mat.define-light-theme((color: (primary: $mia-primary,
+//         accent: $mia-accent,
+//         warn: $mia-warn,
+//       )));
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($mia-theme);
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include mat.all-component-themes($mia-theme);
 
 // Tailwind css
 @tailwind base;
@@ -43,4 +43,24 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  @apply bg-accent text-light;
+}
+
+
+// Animation
+@keyframes anim-text {
+  0% {
+    transform: skew(0, 10deg) rotate(10deg) translate(200px, 1400px);
+    opacity: 0
+  }
+
+  60% {
+    transform: skew(0, 10deg) rotate(10deg) translate(200px, 1400px);
+    opacity: 0
+  }
+
+  100% {
+    transform: skew(0, 0) rotate(0) translate(0, 0);
+    opacity: 1
+  }
 }

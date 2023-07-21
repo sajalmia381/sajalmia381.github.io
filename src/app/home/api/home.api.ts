@@ -19,6 +19,10 @@ export class HomeApi {
   getPosts(): Observable<any> {
     return this.http.get(this.getPath(endpoints.BLOG_LIST), this.headerOptions)
   }
+  
+  getPortfolios(): Observable<any> {
+    return this.http.get(this.getPath(endpoints.PORTFOLIO_LIST), this.headerOptions)
+  }
 
   // Helpers
   private getPath(...arg: string[]): string {

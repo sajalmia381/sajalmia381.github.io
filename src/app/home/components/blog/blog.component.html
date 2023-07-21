@@ -1,7 +1,7 @@
 <section>
   <div class="container">
     <div class="flex items-center flex-wrap justify-between mb-5">
-      <h2>Latest Blog's</h2>
+      <h2>Latest Blogs</h2>
       <a class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" target="_blank" href="https://techincent.com/">View All</a>
     </div>
     <div role="status" *ngIf="isLoading; else content">
@@ -16,8 +16,9 @@
 
 <!-- Content -->
 <ng-template #content>
-  <div *ngIf="errorMsg; else postContent" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative" role="alert">
-    <span>{{errorMsg}}</span>
+  <div *ngIf="errorMsg; else postContent" class="border border-red-400 px-4 py-3 rounded-lg relative" role="alert">
+    <span>{{errorMsg}}!</span>
+    <a class="ml-4 underline" href="https://techincent.com/">Check Here</a>
   </div>
 </ng-template>
 
@@ -42,20 +43,13 @@
         <div class='max-w-md mx-auto'>
           <div class='h-[236px]' style='background-image:url(https://img.freepik.com/free-photo/pasta-spaghetti-with-shrimps-sauce_1220-5072.jpg?w=2000&t=st=1678041911~exp=1678042511~hmac=e4aa55e70f8c231d4d23832a611004f86eeb3b6ca067b3fa0c374ac78fe7aba6);background-size:cover;background-position:center'></div>
           <div class='p-4 sm:p-6'>
-            <p class='font-bold text-gray-700 text-[22px] leading-7 mb-1'>{{post?.title?.rendered}}</p>
             <div class='flex flex-row'>
-              <p class='text-[#3C3C4399] text-[17px] mr-2 line-through'>MVR 700</p>
-              <p class='text-[17px] font-bold text-[#0FB478]'>MVR 700</p>
+              <p class='text-[15px] font-bold text-[#0FB478]'>{{post?.date}}</p>
             </div>
-            <p class='text-[#7C7C80] font-[15px] mt-6'>Our shrimp sauce is made with mozarella, a creamy taste of shrimp with extra kick of spices.</p>
-
-
-              <a target='_blank' href='foodiesapp://food/1001' class='block mt-10 w-full px-4 py-3 font-medium tracking-wide text-center capitalize transition-colors duration-300 transform bg-[#FFC933] rounded-[14px] hover:bg-[#FFC933DD] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80'>
-                  View on foodies
-              </a>
-            <a target='_blank' href="https://apps.apple.com/us/app/id1493631471" class='block mt-1.5 w-full px-4 py-3 font-medium tracking-wide text-center capitalize transition-colors duration-300 transform rounded-[14px] hover:bg-[#F2ECE7] hover:text-[#000000dd] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80'>
-                  Download app
-              </a>
+            <p class='font-bold text-gray-700 text-[18px] leading-7 mb-3 mt-2'>{{post?.title?.rendered}}</p>
+            <a target='_blank' [href]="post?.link" class='block mt-1.5 w-full px-4 py-3 font-medium tracking-wide text-center capitalize transition-colors duration-300 transform rounded-[14px] bg-[#F2ECE7] text-[#000000dd] hover:bg-[#ebded3] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80'>
+              View
+            </a>
           </div>
         </div>
     </div>

@@ -8,13 +8,15 @@ import { HomeApi } from './api/home.api';
 import { HomeState } from './state/home.state';
 import { HomeFacade } from './home.facade';
 import { HeroComponent } from './components/hero/hero.component';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     BlogComponent,
     PortfolioComponent,
-    HeroComponent
+    HeroComponent,
+    ExperienceComponent
   ],
   imports: [
     CommonModule,

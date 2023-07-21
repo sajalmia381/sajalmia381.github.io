@@ -1,0 +1,56 @@
+.experience {
+  &_area {
+    padding-bottom: 50px;
+  }
+  &_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  // Element
+  &_desc {
+    font-size: 15px;
+    margin-top: 6px;
+  }
+  
+  &_item {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &_period {
+    flex: none;
+    width: 200px;
+  }
+  
+  &_title{
+    font-size: 1.2rem;
+    &_link {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    &_item {
+      flex-direction: row;
+    }
+  }
+  @media (min-width: 992px) {
+    &_period {
+      width: 300px;
+    }
+  }
+}
+
+.skill_list {
+  margin-top: 6px;
+  gap: 5px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  li {
+    @apply rounded-full bg-teal-400/40 px-3 py-1 text-xs font-medium leading-5 text-teal-300;
+  }
+}

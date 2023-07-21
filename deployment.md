@@ -20,7 +20,6 @@ git add .
 git commit -m "message"
 ```
 
-
 ## 04. Push in remote branch
 ```bash
 git push origin gh-page

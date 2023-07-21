@@ -43,9 +43,16 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  @apply bg-accent text-light;
+  @apply bg-accent text-slate-300;
+  font-size: 15px;
+  @media (min-width: 992px) {
+    font-size: 16px;
+  }
 }
 
+h1,h2,h3,h4,h5,h6 {
+  color: #ffffff;
+}
 
 // Animation
 @keyframes anim-text {

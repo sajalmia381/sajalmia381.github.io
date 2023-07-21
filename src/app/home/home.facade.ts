@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HomeState } from "./state/home.state";
 import { HomeApi } from "./api/home.api";
 import { Observable, tap } from "rxjs";
-import { IPost } from "./modals";
+import { IPortfolio, IPost } from "./modals";
 
 @Injectable()
 export class HomeFacade {
@@ -16,6 +16,12 @@ export class HomeFacade {
   loadPosts() {
     return this.homeApi.getPosts().pipe(tap(res => {
       this.homeState.loadPosts((res?.data as IPost[])?.slice(0, 6))
+    }))
+  }
+  
+  loadPortfolios() {
+    return this.homeApi.getPortfolios().pipe(tap(res => {
+      this.homeState.loadPortfolios((res?.data as IPortfolio[])?.slice(0, 6))
     }))
   }
 }

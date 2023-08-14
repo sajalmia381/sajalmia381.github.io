@@ -12,6 +12,7 @@
     font-size: 6vw;
     line-height: 8vw;
     margin-top: 70px;
+    margin-bottom: 30px;
 
     &_sub {
       font-size: 5vw;
@@ -28,13 +29,15 @@
   }
 
   &_illustrator {
-    margin-top: 10px;
-    min-width: 320px;
-    min-height: 400px;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 300px;
+    min-height: 300px;
     position: absolute;
     z-index: -1;
 
     &::before {
+      position: absolute;
       content: "";
       background-color: #18033C;
       border-top-left-radius: 10px;
@@ -43,26 +46,110 @@
       border-bottom-right-radius: 200px;
       height: 100%;
       width: 100%;
-      position: absolute;
-      animation: scale-background 2000ms cubic-bezier(0, 0.45, 0.15, 1);
+      animation: scale-background 3s cubic-bezier(0, 0.45, 0.15, 1);
+      opacity: .05;
     }
   }
 
   &_avatar {
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     z-index: 20;
-    margin: 37px 0 0 20px;
+    margin: 15px 0 0 20px;
     z-index: -1;
+    &_img {
+      position: relative;
+      border-radius: 50%;
+      width: 260px;
+      
+      img {
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
+      }
+      
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: block;
+        width: 100%;
+        height: 100%;
+        // background: #f7cac9;
+        border-radius: 50%;
+        animation: pulse-border 2s ease-out infinite;
+        @apply bg-primary;
+      }
+
+      // &:after {
+      //   content: "";
+      //   position: absolute;
+      //   z-index: 1;
+      //   left: 50%;
+      //   top: 50%;
+      //   transform: translateX(-50%) translateY(-50%);
+      //   display: block;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: #f7cac9;
+      //   border-radius: 50%;
+      //   transition: all .2s
+      // }
+    }
+  }
+}
+
+// Scroll Down
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 48px;
+  width: 30px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 58px;
+  border: 1px solid;
+  z-index: 10;
+  color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  
+  span {
+    display: block;
+    height: 8px;
+    width: 4px;
+    border-radius: 4px;
+    background: #f9f9f9;
+    margin-top: 8px;
+    -webkit-animation: scroll-down 3s infinite;
+    animation: scroll-down 3s infinite;
   }
 }
 
 @media (min-width: 1200px) {
-  $marginLeft: 480px;
+  $marginLeft: 410px;
 
   .hero {
+    &_title {
+      margin-bottom: 60px;
+    }
+    
+    &_illustrator,
+    &_avatar {
+      visibility: visible;
+      opacity: 1;
+    }
+    
     &_details {
       width: calc(100% - $marginLeft);
       margin-left: $marginLeft;
+      margin-bottom: 80px;
     }
   }
 }

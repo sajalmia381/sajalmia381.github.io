@@ -1,0 +1,22 @@
+.skill {
+  
+  &_area {
+    padding-bottom: 80px;
+    border: 1px 0 1px 0 solid #111;
+  }
+  
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+    
+    @screen sm {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    @screen lg {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    
+  }
+}

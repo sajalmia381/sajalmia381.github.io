@@ -100,3 +100,21 @@ h1,h2,h3,h4,h5,h6 {
     opacity: 0; 
   }
 }
+
+// Section
+.section{
+  &_title {
+    font-size: 18px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: calc(100% + 14px);
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1px;
+      width: 35px;
+      background-color: #ffffff;
+    }
+  }
+}

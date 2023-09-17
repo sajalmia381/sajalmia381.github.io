@@ -9,6 +9,7 @@ import { HomeState } from './state/home.state';
 import { HomeFacade } from './home.facade';
 import { HeroComponent } from './components/hero/hero.component';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { SkillComponent } from './components/skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
     BlogComponent,
     PortfolioComponent,
     HeroComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    SkillComponent
   ],
   imports: [
     CommonModule,

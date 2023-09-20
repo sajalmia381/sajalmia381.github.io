@@ -2,6 +2,7 @@
   &_area {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
   }
 
   &_title {
@@ -105,9 +106,9 @@
 
 // Scroll Down
 .scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
+  // position: absolute;
+  // bottom: 30px;
+  // left: 50%;
   transform: translateX(-50%);
   height: 48px;
   width: 30px;
@@ -119,6 +120,7 @@
   color: #f9f9f9;
   display: flex;
   justify-content: center;
+  margin: auto auto 30px;
   
   span {
     display: block;
@@ -129,6 +131,18 @@
     margin-top: 8px;
     -webkit-animation: scroll-down 3s infinite;
     animation: scroll-down 3s infinite;
+  }
+}
+
+// Social Media
+.social_media {
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 40px;
+  li {
+    a {
+      display: inline-block;
+    }
   }
 }
 

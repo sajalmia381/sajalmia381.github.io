@@ -17,6 +17,11 @@ export class HomeApi {
   constructor(@Optional() @Inject(APP_ENV) private env: IEnv, private http: HttpClient) { }
 
   getPosts(): Observable<any> {
+    const newHeader = this.headerOptions;
+    newHeader['params'] = {
+      per_page: 9,
+      page: 1,
+    }
     return this.http.get(this.getPath(endpoints.BLOG_LIST), this.headerOptions)
   }
   

@@ -27,7 +27,7 @@ export class BlogComponent implements OnInit {
       error: (err) => {
         this.isLoading = false
         console.log('err', err)
-        this.errorMsg = err?.error?.message || "Something is wrong on blog"
+        this.errorMsg = err?.error?.message || "Something is wrong"
       },
       complete: () => {
         this.isLoading = false;

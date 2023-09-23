@@ -1,4 +1,4 @@
-<section>
+<section class="bg-gray-900 py-[70px]">
   <div class="container">
     <div class="flex items-center flex-wrap justify-between mb-5">
       <h2 class="section_title">Latest Blogs</h2>
@@ -26,11 +26,11 @@
 <!-- Post Content -->
 <ng-template #postContent>
   <!-- This is an example component -->
-  <ng-container *ngIf="posts$ | async as postList; else emptyMsg">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6" *ngIf="posts$ | async as postList; else emptyMsg">
     <ng-container *ngFor="let post of postList">
       <ng-container *ngTemplateOutlet="postTemplate; context: {$implicit: post}"></ng-container>
     </ng-container>
-  </ng-container>
+  </div>
   
 </ng-template>
 
@@ -39,20 +39,21 @@
 </ng-template>
 
 <ng-template #postTemplate let-post>
-  <div class='flex items-center justify-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br px-2'>
-    <div class='w-full max-w-md  mx-auto bg-white rounded-3xl shadow-xl overflow-hidden'>
-        <div class='max-w-md mx-auto'>
-          <div class='h-[236px]' style='background-image:url(https://img.freepik.com/free-photo/pasta-spaghetti-with-shrimps-sauce_1220-5072.jpg?w=2000&t=st=1678041911~exp=1678042511~hmac=e4aa55e70f8c231d4d23832a611004f86eeb3b6ca067b3fa0c374ac78fe7aba6);background-size:cover;background-position:center'></div>
-          <div class='p-4 sm:p-6'>
-            <div class='flex flex-row'>
-              <p class='text-[15px] font-bold text-[#0FB478]'>{{post?.date}}</p>
-            </div>
-            <p class='font-bold text-gray-700 text-[18px] leading-7 mb-3 mt-2'>{{post?.title?.rendered}}</p>
-            <a target='_blank' [href]="post?.link" class='block mt-1.5 w-full px-4 py-3 font-medium tracking-wide text-center capitalize transition-colors duration-300 transform rounded-[14px] bg-[#F2ECE7] text-[#000000dd] hover:bg-[#ebded3] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80'>
-              View
-            </a>
-          </div>
+  <div class='w-full bg-[#ecebe1] bg-opacity-10 rounded-3xl shadow-xl overflow-hidden'>
+    <div class='max-w-md mx-auto'>
+      <div class='h-[236px]' [style]='"background-image:url("+ post?.feature_images + ");background-size:cover;background-position:center"'></div>
+      <div class='p-4 sm:p-6'>
+        <div class='flex flex-row'>
+          <p class='text-[15px] font-bold text-[#0FB478]'>{{post?.date}}</p>
         </div>
+        <p class='font-bold text-[18px] leading-7 mb-3 mt-2'>{{post?.title?.rendered}}</p>
+        <a target='_blank' [href]="post?.link" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          Read more
+          <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+      </a>
+      </div>
     </div>
   </div>
 </ng-template>

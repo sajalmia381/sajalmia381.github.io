@@ -12,16 +12,20 @@ export class HomeFacade {
   getPosts$(): Observable<IPost[] | null> {
     return this.homeState.posts$
   }
+  
+  getPortfolio$(): Observable<IPortfolio[] | null> {
+    return this.homeState.portfolios$
+  }
 
   loadPosts() {
-    return this.homeApi.getPosts().pipe(tap(res => {
-      this.homeState.loadPosts((res?.data as IPost[])?.slice(0, 6))
+    return this.homeApi.getPosts().pipe(tap(data => {
+      this.homeState.loadPosts((data as IPost[])?.slice(0, 6))
     }))
   }
   
   loadPortfolios() {
-    return this.homeApi.getPortfolios().pipe(tap(res => {
-      this.homeState.loadPortfolios((res?.data as IPortfolio[])?.slice(0, 6))
+    return this.homeApi.getPortfolios().pipe(tap( data => {
+      this.homeState.loadPortfolios((data as IPortfolio[])?.slice(0, 6))
     }))
   }
 }

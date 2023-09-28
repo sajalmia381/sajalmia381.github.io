@@ -166,6 +166,7 @@
     &_avatar {
       visibility: visible;
       opacity: 1;
+      z-index: 1;
     }
     
     &_details {

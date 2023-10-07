@@ -10,6 +10,7 @@ import { HomeFacade } from './home.facade';
 import { HeroComponent } from './components/hero/hero.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { SkillComponent } from './components/skill/skill.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SkillComponent } from './components/skill/skill.component';
     PortfolioComponent,
     HeroComponent,
     ExperienceComponent,
-    SkillComponent
+    SkillComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

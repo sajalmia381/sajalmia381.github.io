@@ -55,6 +55,12 @@ h1,h2,h3,h4,h5,h6 {
   color: #ffffff;
 }
 
+
+// Theme color
+.bg-theme-2 {
+  @apply bg-teal-400/40;
+}
+
 // Animation
 @keyframes anim-text {
   0% {

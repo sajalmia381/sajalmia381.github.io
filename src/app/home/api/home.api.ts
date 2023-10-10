@@ -10,7 +10,7 @@ export class HomeApi {
 
   headerOptions: any = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/json'
     })
   }
 

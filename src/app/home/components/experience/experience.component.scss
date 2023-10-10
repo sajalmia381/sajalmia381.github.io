@@ -6,11 +6,11 @@
   &_list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
   }
   // Element
   &_desc {
-    font-size: 15px;
+    font-size: .95rem;
     margin-top: 6px;
   }
   
@@ -47,7 +47,7 @@
 }
 
 .skill_list {
-  margin-top: 6px;
+  margin-top: .8rem;
   gap: 5px;
   display: inline-flex;
   flex-wrap: wrap;

@@ -11,6 +11,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { SkillComponent } from './components/skill/skill.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactComponent } from './components/contact/contact.component';
     HeroComponent,
     ExperienceComponent,
     SkillComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

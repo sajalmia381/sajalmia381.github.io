@@ -1,11 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors');
-
 module.exports = {
   content: [
     "./src/**/*.{html,scss,ts}",
   ],
-  prefix: '',
   important: ':root',
   mode: 'jit',
   darkMode: 'class', // or 'media' or 'class'
@@ -15,7 +12,7 @@ module.exports = {
       padding: {
         DEFAULT: "15px",
         sm: "30px"
-      },
+      }
     },
     screens: {
       sm: '576px',
@@ -24,9 +21,6 @@ module.exports = {
       xl: '1200px',
       xxl: '1440px'
     },
-    // colors: {
-    //   primary: colors.teal
-    // },
     extend: {
       colors: {
         primary: {
@@ -50,5 +44,5 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: [],
+  plugins: []
 }

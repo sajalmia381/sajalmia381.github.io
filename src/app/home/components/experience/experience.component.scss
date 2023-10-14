@@ -23,10 +23,12 @@
   &_period {
     flex: none;
     width: 200px;
+    line-height: calc(1.2rem + 10px);
   }
   
   &_title{
     font-size: 1.2rem;
+    line-height: calc(1.2rem + 10px);
     &_link {
       display: flex;
       align-items: center;

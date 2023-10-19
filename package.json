@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
     "start": "ng serve --port 4400",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -29,17 +30,32 @@
     "@angular-devkit/build-angular": "^16.0.3",
     "@angular/cli": "~16.0.3",
     "@angular/compiler-cli": "^16.0.3",
+    "@schuchard/prettier": "^5.1.0",
     "@types/jasmine": "~4.3.0",
     "angular-cli-ghpages": "^0.6.2",
     "autoprefixer": "^10.4.14",
+    "husky": "latest",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "lint-staged": "latest",
     "postcss": "^8.4.23",
+    "prettier": "latest",
     "tailwindcss": "^3.3.2",
+    "tslint-config-prettier": "latest",
     "typescript": "~5.0.2"
+  },
+  "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.{js,json,css,scss,less,md,ts,html,component.html}": [
+        "prettier --write"
+      ]
+    }
   }
-}

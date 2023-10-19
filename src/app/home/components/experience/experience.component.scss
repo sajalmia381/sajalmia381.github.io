@@ -10,10 +10,10 @@
   }
   // Element
   &_desc {
-    font-size: .95rem;
+    font-size: 0.95rem;
     margin-top: 6px;
   }
-  
+
   &_item {
     display: flex;
     flex-direction: column;
@@ -23,17 +23,19 @@
   &_period {
     flex: none;
     width: 200px;
+    line-height: calc(1.2rem + 10px);
   }
-  
-  &_title{
+
+  &_title {
     font-size: 1.2rem;
+    line-height: calc(1.2rem + 10px);
     &_link {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
     }
   }
-  
+
   @media (min-width: 768px) {
     &_item {
       flex-direction: row;
@@ -47,7 +49,7 @@
 }
 
 .skill_list {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   gap: 5px;
   display: inline-flex;
   flex-wrap: wrap;

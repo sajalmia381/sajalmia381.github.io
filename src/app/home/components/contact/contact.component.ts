@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'mia-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: "mia-contact",
+  templateUrl: "./contact.component.html",
+  styleUrls: ["./contact.component.scss"],
 })
-export class ContactComponent {
-
-}
+export class ContactComponent {}

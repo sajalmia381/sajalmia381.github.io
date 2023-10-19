@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'mia-experience',
-  templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.scss']
+  selector: "mia-experience",
+  templateUrl: "./experience.component.html",
+  styleUrls: ["./experience.component.scss"],
 })
-export class ExperienceComponent {
-
-}
+export class ExperienceComponent {}

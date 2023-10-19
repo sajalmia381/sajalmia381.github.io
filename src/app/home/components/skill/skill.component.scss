@@ -3,16 +3,16 @@
     padding: 80px 0;
     border-radius: 65px 0 65px 0;
   }
-  
+
   &_list {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 1rem;
-    
+
     @screen sm {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    
+
     @screen lg {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.5rem;

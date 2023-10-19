@@ -42,19 +42,23 @@ body {
 
 body {
   margin: 0;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   @apply bg-gray-900 text-slate-300;
   font-size: 14px;
-  
+
   @media (min-width: 992px) {
     font-size: 16px;
   }
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #ffffff;
 }
-
 
 // Theme color
 .bg-theme-2 {
@@ -65,51 +69,50 @@ h1,h2,h3,h4,h5,h6 {
 @keyframes anim-text {
   0% {
     transform: skew(0, 10deg) rotate(10deg) translate(200px, 1400px);
-    opacity: 0
+    opacity: 0;
   }
 
   60% {
     transform: skew(0, 10deg) rotate(10deg) translate(200px, 1400px);
-    opacity: 0
+    opacity: 0;
   }
 
   100% {
     transform: skew(0, 0) rotate(0) translate(0, 0);
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @keyframes pulse-border {
   0% {
     transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-    opacity: .4
+    opacity: 0.4;
   }
 
   100% {
     transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
-    opacity: 0
+    opacity: 0;
   }
 }
 
 @keyframes scroll-down {
-  
   0% {
     opacity: 1;
   }
-  
+
   50% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-  
+
   100% {
     transform: translate3d(0, 20px, 0);
-    opacity: 0; 
+    opacity: 0;
   }
 }
 
 // Section
-.section{
+.section {
   &_title {
     font-size: 20px;
     position: relative;

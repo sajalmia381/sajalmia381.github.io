@@ -1,3 +1,3 @@
 export interface ITitle {
-  rendered: string | undefined
+  rendered: string | undefined;
 }

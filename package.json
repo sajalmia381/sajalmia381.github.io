@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
+    "prettier": "prettier --write \"./src/**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
     "start": "ng serve --port 4400",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

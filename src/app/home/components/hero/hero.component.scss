@@ -36,7 +36,7 @@
     &::before {
       position: absolute;
       content: "";
-      background-color: #18033C;
+      background-color: #18033c;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       border-bottom-left-radius: 200px;
@@ -44,7 +44,7 @@
       height: 100%;
       width: 100%;
       animation: scale-background 3s cubic-bezier(0, 0.45, 0.15, 1);
-      opacity: .05;
+      opacity: 0.05;
     }
   }
 
@@ -59,13 +59,13 @@
       position: relative;
       border-radius: 50%;
       width: 260px;
-      
+
       img {
         border-radius: 50%;
         position: relative;
         z-index: 2;
       }
-      
+
       &:before {
         content: "";
         position: absolute;
@@ -117,7 +117,7 @@
   display: flex;
   justify-content: center;
   margin: auto auto 30px;
-  
+
   span {
     display: block;
     height: 8px;
@@ -139,7 +139,7 @@
     a {
       display: inline-block;
       svg {
-        transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
       &:hover {
         svg {
@@ -166,14 +166,14 @@
     &_title {
       margin-bottom: 60px;
     }
-    
+
     &_illustrator,
     &_avatar {
       visibility: visible;
       opacity: 1;
       z-index: 1;
     }
-    
+
     &_details {
       width: calc(100% - $marginLeft);
       margin-left: $marginLeft;

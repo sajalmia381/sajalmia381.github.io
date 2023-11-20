@@ -8,9 +8,14 @@ import { Observable } from "rxjs";
 @Injectable()
 export class HomeApi {
   headerOptions: any = {
-    headers: new HttpHeaders({
+    // headers: new HttpHeaders({
       // 'Content-Type': 'application/json'
-    }),
+    // }),
+    params: {
+      _fields: `title,feature_images,date,link`,
+      per_page: 6,
+      page: 1,
+    }
   };
 
   constructor(
@@ -19,11 +24,6 @@ export class HomeApi {
   ) {}
 
   getPosts(): Observable<any> {
-    const newHeader = this.headerOptions;
-    newHeader["params"] = {
-      per_page: 9,
-      page: 1,
-    };
     return this.http.get(this.getPath(endpoints.BLOG_LIST), this.headerOptions);
   }
 

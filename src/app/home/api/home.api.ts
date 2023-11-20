@@ -13,7 +13,10 @@ export class HomeApi {
     }),
   };
 
-  constructor(@Optional() @Inject(APP_ENV) private env: IEnv, private http: HttpClient) {}
+  constructor(
+    @Optional() @Inject(APP_ENV) private env: IEnv,
+    private http: HttpClient
+  ) {}
 
   getPosts(): Observable<any> {
     const newHeader = this.headerOptions;

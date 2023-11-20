@@ -6,7 +6,10 @@ import { IPortfolio, IPost } from "./modals";
 
 @Injectable()
 export class HomeFacade {
-  constructor(private homeState: HomeState, private homeApi: HomeApi) {}
+  constructor(
+    private homeState: HomeState,
+    private homeApi: HomeApi
+  ) {}
 
   getPosts$(): Observable<IPost[] | null> {
     return this.homeState.posts$;

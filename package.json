@@ -48,11 +48,6 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "~5.2.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,json,css,scss,less,md,ts,html,component.html}": [
       "prettier --write"

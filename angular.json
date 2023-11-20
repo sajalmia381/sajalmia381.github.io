@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "sajalmia-resume:build:production"
+              "buildTarget": "sajalmia-resume:build:production"
             },
             "development": {
-              "browserTarget": "sajalmia-resume:build:development"
+              "buildTarget": "sajalmia-resume:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sajalmia-resume:build"
+            "buildTarget": "sajalmia-resume:build"
           }
         },
         "test": {

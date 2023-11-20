@@ -1,4 +1,4 @@
-<section class="py-[70px]">
+<section class="blog__area py-[70px] bg-theme-2">
   <div class="container">
     <div class="flex items-center flex-wrap justify-between mb-5">
       <h2 class="section_title">Latest Blogs</h2>
@@ -43,10 +43,7 @@
 <!-- Post Content -->
 <ng-template #postContent>
   <!-- This is an example component -->
-  <div
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6"
-    *ngIf="posts$ | async as postList; else emptyMsg"
-  >
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6" *ngIf="posts$ | async as postList; else emptyMsg">
     <ng-container *ngFor="let post of postList">
       <ng-container *ngTemplateOutlet="postTemplate; context: { $implicit: post }"></ng-container>
     </ng-container>
@@ -58,7 +55,7 @@
 </ng-template>
 
 <ng-template #postTemplate let-post>
-  <div class="w-full bg-[#ecebe1] bg-opacity-10 rounded-3xl shadow-xl overflow-hidden">
+  <div class="w-full bg-gray-900 bg-opacity-50 rounded-3xl shadow-xl overflow-hidden">
     <div class="max-w-md mx-auto">
       <div
         *ngIf="post?.feature_images"
@@ -71,7 +68,7 @@
 
       <div class="p-4 sm:p-6">
         <div class="flex flex-row">
-          <p class="text-[15px] font-bold text-[#0FB478]">{{ post?.date | date : "mediumDate" }}</p>
+          <p class="text-[15px] font-bold text-[#0FB478]">{{ post?.date | date: "mediumDate" }}</p>
         </div>
         <p class="font-bold text-[18px] leading-7 mb-3 mt-2">{{ post?.title?.rendered }}</p>
         <a
@@ -80,20 +77,8 @@
           class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Read more
-          <svg
-            class="w-3.5 h-3.5 ml-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
+          <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
           </svg>
         </a>
       </div>

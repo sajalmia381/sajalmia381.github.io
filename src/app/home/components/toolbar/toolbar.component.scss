@@ -1,0 +1,8 @@
+#toolbar_area {
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid;
+  @apply bg-gray-900 border-gray-500;
+  z-index: 9999;
+}

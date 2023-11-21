@@ -1,18 +1,35 @@
 <section id="hero_area" class="bg-theme-2">
   <div class="container">
     <h2 class="hero_title">
-      <span class="hero_title_sub">Hay! This is Sajal Mia,</span> <br />
-      Professional Software Engineer
+      <span class="hero_title_sub">
+        <span
+          *ngFor="let letter of grettingText; let i = index; let last = last"
+          [@enterLetterAnim1]="{ value: '', params: { delay: 30 +  i * 50 } }"
+          [@letterAnim1]="{ value: animationState, params: { delay: i * 20 } }"
+          [@hueLetter]="{ value: hueState, params: { delay: i * 20 } }"
+          (@letterAnim1.done)="last && (hueState = !hueState)"
+          >{{ letter }}</span
+        >
+      </span>
+      <br />
+      <span
+        *ngFor="let letter of titleText; let i = index; let last = last"
+        [@enterLetterAnim2]="{ value: '', params: { delay: 800 + getDelay(i, titleText.length) } }"
+        [@letterAnim2]="{ value: animationState, params: { delay: 500 + i * 30 } }"
+        [@hueLetter]="{ value: hueState, params: { delay: i * 75 } }"
+        (@enterLetterAnim2.done)="last && (hueState = !hueState)"
+        >{{ letter }}</span
+      >
     </h2>
-    <div class="hero_illustrator"></div>
-    <div class="hero_avatar">
+    <div [@fadeIn]="{value: '', params: {delay: 800, duration: 3200}}" class="hero_illustrator"></div>
+    <div [@fadeIn]="{value: '', params: {delay: 800, duration: 3200}}" class="hero_avatar">
       <div class="hero_avatar_img">
         <img src="assets/avatar.png" alt="" />
       </div>
     </div>
     <div class="hero_details">
       <!-- Professional Definition -->
-      <p>
+      <p [@fadeInUp]="{value: '', params: {delay: 800, duration: 800}}">
         At this time I have more than six years of working experiences as Software Engineer. Currently I am working as a Senior Software
         Engineer at KloverCloud for three years. My responsibility at KloverCloud, improves and implement new features at their saas
         platform, lead UI products. I've also write blog post at
@@ -20,15 +37,15 @@
       </p>
 
       <!-- Self Definition -->
-      <p>
+      <p [@fadeInUp]="{value: '', params: {delay: 1100, duration: 1000}}">
         Well, I would describe myself as somebody who is positive, happy and also resilient. I would say I'm the type of person who always
         puts the needs of a team first. I am a creative problem solver. I always embraces positive change. I am trustworthy and reliable.
       </p>
 
       <!-- Personal Life -->
-      <p>Outside of computer, I like to keep myself fit and active. Which in turn improves my concentration levels whilst.</p>
+      <p [@fadeInUp]="{value: '', params: {delay: 1600, duration: 1000}}">Outside of computer, I like to keep myself fit and active. Which in turn improves my concentration levels whilst.</p>
 
-      <ul class="social_media">
+      <ul [@fadeInUp]="{value: '', params: {delay: 2000, duration: 1000}}" class="social_media">
         <li>
           <a target="_blank" href="https://www.linkedin.com/in/sajalmia381">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7" aria-hidden="true">

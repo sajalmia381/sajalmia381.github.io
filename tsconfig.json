@@ -26,6 +26,9 @@
     "paths": {
       "@package/*": [
         "src/app/package/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
       ]
     }
   },

@@ -44,8 +44,8 @@
 <ng-template #postContent>
   <!-- This is an example component -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6" *ngIf="posts$ | async as postList; else emptyMsg">
-    <ng-container *ngFor="let post of postList">
-      <ng-container *ngTemplateOutlet="postTemplate; context: { $implicit: post }"></ng-container>
+    <ng-container *ngFor="let post of postList; let i = index">
+      <ng-container *ngTemplateOutlet="postTemplate; context: { $implicit: post, index: i }"></ng-container>
     </ng-container>
   </div>
 </ng-template>
@@ -54,8 +54,12 @@
   <h4>Post is not found!</h4>
 </ng-template>
 
-<ng-template #postTemplate let-post>
-  <div class="w-full bg-gray-900 bg-opacity-50 rounded-3xl shadow-xl overflow-hidden">
+<ng-template #postTemplate let-post let-index="index">
+  <div
+    class="w-full bg-gray-900 bg-opacity-50 rounded-3xl shadow-xl overflow-hidden"
+    [class.opacity-0]="animationState === 0"
+    [@bounceIn]="{ value: animationState, params: { delay: 50 + (200 * index) } }"
+  >
     <div class="max-w-md mx-auto">
       <div
         *ngIf="post?.feature_images"

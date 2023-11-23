@@ -1,24 +1,35 @@
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
+import { Component, OnInit, inject } from "@angular/core";
 import { HomeFacade } from "../../home.facade";
-import { IPortfolio } from "../../modals";
+import { fadeInUpAnimation } from "@shared/animations";
+import { ScrollComponent } from "@shared/models/scroll.component";
 
 @Component({
   selector: "mia-home-portfolio",
   templateUrl: "./portfolio.component.html",
   styleUrls: ["./portfolio.component.scss"],
+  animations: [
+    fadeInUpAnimation({anchor: 'fadeInUp', translate: '150px', duration: 800}),
+  ]
 })
-export class PortfolioComponent implements OnInit {
-  isLoading: boolean = true;
-  data$!: Observable<IPortfolio[] | null>;
-  errorMsg: string = "";
+export class PortfolioComponent extends ScrollComponent implements OnInit {
+  private homeFacade = inject(HomeFacade);
 
-  constructor(private homeFacade: HomeFacade) {
-    this.data$ = this.homeFacade.getPortfolio$();
-  }
+  animationState = 0;
+
+  isLoading: boolean = true;
+  data$ = this.homeFacade.getPortfolio$();
+  errorMsg: string = "";
 
   ngOnInit(): void {
     this.loadPosts();
+    this.scrollBottomPosition$.subscribe((scrollPosition: number) => {
+      const componentPosition = this.el.nativeElement.offsetTop;
+      if (scrollPosition - 250 >= componentPosition) {
+        this.animationState = 1;
+      } else {
+        this.animationState = 0;
+      }
+    })
   }
 
   loadPosts(): void {
@@ -34,4 +45,5 @@ export class PortfolioComponent implements OnInit {
       },
     });
   }
+
 }

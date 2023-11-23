@@ -3,14 +3,20 @@
     <div class="flex items-center flex-wrap justify-between mb-6">
       <h2 class="section_title">My Skills</h2>
     </div>
-
     <div class="skill_list">
-      <div class="skill_item" *ngFor="let skill of skill_list">
-        <div class="mb-1 text-lg font-medium dark:text-white">{{ skill.name }}</div>
-        <div class="w-full bg-gray-200 rounded-full h-2 mb-4 dark:bg-gray-700">
-          <div class="h-2 rounded-full" [ngClass]="skill.progressBarColor || 'bg-green-400'" [style]="{ width: skill.wight + '%' }"></div>
-        </div>
-      </div>
+      <ng-container *ngFor="let skill of skill_list">
+        <ng-container *ngTemplateOutlet="skillTemplate; context: {skill}"></ng-container>
+      </ng-container>
     </div>
   </div>
 </section>
+
+<!-- Skill Progress Bard -->
+<ng-template #skillTemplate let-skill="skill">
+  <div class="skill_item">
+    <div class="mb-1 text-lg font-medium dark:text-white">{{ skill.name }}</div>
+    <div class="w-full bg-gray-200 rounded-full h-2 mb-4 dark:bg-gray-700">
+      <div class="h-2 rounded-full" [ngClass]="skill.progressBarColor || 'bg-green-400'" [style]="{ width: skill.wight + '%' }"></div>
+    </div>
+  </div>
+</ng-template>

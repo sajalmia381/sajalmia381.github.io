@@ -1,10 +1,7 @@
-import { Component, ElementRef, OnInit, inject } from "@angular/core";
-import { Observable } from "rxjs";
+import { Component, OnInit, inject } from "@angular/core";
 import { HomeFacade } from "../../home.facade";
-import { IPortfolio } from "../../modals";
 import { fadeInUpAnimation } from "@shared/animations";
-import { ScrollService } from "@shared/services/scroll.service";
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { ScrollComponent } from "@shared/models/scroll.component";
 
 @Component({
   selector: "mia-home-portfolio",
@@ -14,13 +11,10 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
     fadeInUpAnimation({anchor: 'fadeInUp', translate: '150px', duration: 800}),
   ]
 })
-export class PortfolioComponent implements OnInit {
-  private scrollService = inject(ScrollService);
+export class PortfolioComponent extends ScrollComponent implements OnInit {
   private homeFacade = inject(HomeFacade);
-  private el = inject(ElementRef);
 
   animationState = 0;
-  scrollPosition$ = this.scrollService.scrollBottomPosition$.pipe(takeUntilDestroyed());
 
   isLoading: boolean = true;
   data$ = this.homeFacade.getPortfolio$();
@@ -28,7 +22,7 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPosts();
-    this.scrollPosition$.subscribe((scrollPosition: number) => {
+    this.scrollBottomPosition$.subscribe((scrollPosition: number) => {
       const componentPosition = this.el.nativeElement.offsetTop;
       if (scrollPosition - 250 >= componentPosition) {
         this.animationState = 1;

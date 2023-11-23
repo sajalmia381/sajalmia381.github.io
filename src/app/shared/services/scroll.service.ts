@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, distinctUntilChanged, map, throttleTime } from "rxjs";
 
-export interface IWindowScroll {
+export interface IScroll {
   scrollY: number,
   innerHeight: number
   // Add More
@@ -11,14 +11,14 @@ export interface IWindowScroll {
   providedIn: "root"
 })
 export class ScrollService {
-  private _windowEvent = new BehaviorSubject<IWindowScroll>({scrollY: 0, innerHeight: 0})
-  public windowScrollData$ = this._windowEvent.asObservable().pipe(
+  private _scrollEvent = new BehaviorSubject<IScroll>({scrollY: 0, innerHeight: 0})
+  public scrollData$ = this._scrollEvent.asObservable().pipe(
     // distinctUntilChanged(),
     throttleTime(100),
   );  
-  public scrollBottomPosition$ = this.windowScrollData$.pipe(map((data) => data.scrollY + data.innerHeight))
+  public scrollBottomPosition$ = this.scrollData$.pipe(map((data) => data.scrollY + data.innerHeight))
 
-  update(value: IWindowScroll): void {
-    this._windowEvent.next(value)
+  update(value: IScroll): void {
+    this._scrollEvent.next(value)
   }
 }

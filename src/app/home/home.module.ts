@@ -16,6 +16,7 @@ import { ContactComponent } from "./components/contact/contact.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { ToolbarComponent } from "./components/toolbar/toolbar.component";
 import { RouterModule } from "@angular/router";
+import { ExperienceItemComponent } from "./components/experience/experience-item/experience-item.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RouterModule } from "@angular/router";
     BlogComponent,
     PortfolioComponent,
     ExperienceComponent,
+    ExperienceItemComponent,
     SkillComponent,
     ContactComponent,
     FooterComponent,

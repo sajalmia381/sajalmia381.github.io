@@ -8,6 +8,7 @@ import { HomeState } from "./state/home.state";
 import { HomeFacade } from "./home.facade";
 
 import { BlogComponent } from "./components/blog/blog.component";
+import { BlogCardComponent } from "./components/blog/blog-card.component";
 import { PortfolioComponent } from "./components/portfolio/portfolio.component";
 import { PortfolioCardComponent } from "./components/portfolio/protfolio-card.component";
 import { HeroComponent } from "./components/hero/hero.component";
@@ -26,6 +27,7 @@ import { RouterModule } from "@angular/router";
     HeroComponent,
     ToolbarComponent,
     BlogComponent,
+    BlogCardComponent,
     PortfolioComponent,
     PortfolioCardComponent,
     ExperienceComponent,

@@ -7,7 +7,7 @@ import { distinctUntilChanged, map } from "rxjs/operators";
   selector: "mia-footer",
   templateUrl: "./footer.component.html",
   styleUrls: ["./footer.component.scss"],
-  animations: [flipAnimation({ duration: 800 }), fadeInUpAnimation({ duration: 800 })],
+  animations: [flipAnimation({ duration: 1000 }), fadeInUpAnimation({ duration: 800 })],
 })
 export class FooterComponent extends ScrollComponent implements OnInit {
   animationState = 0;

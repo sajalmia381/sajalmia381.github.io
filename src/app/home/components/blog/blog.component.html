@@ -44,9 +44,7 @@
 <ng-template #postContent>
   <!-- This is an example component -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6" *ngIf="posts$ | async as postList; else emptyMsg">
-    <ng-container *ngFor="let post of postList; let i = index">
-      <ng-container *ngTemplateOutlet="postTemplate; context: { $implicit: post, index: i }"></ng-container>
-    </ng-container>
+    <mia-blog-card *ngFor="let post of postList; let i = index" [post]="post" [index]="i" [scrollBottomPosition$]="scrollBottomPosition$"></mia-blog-card>
   </div>
 </ng-template>
 
@@ -54,38 +52,3 @@
   <h4>Post is not found!</h4>
 </ng-template>
 
-<ng-template #postTemplate let-post let-index="index">
-  <article
-    class="w-full bg-gray-900 bg-opacity-50 rounded-3xl shadow-xl overflow-hidden"
-    [class.opacity-0]="animationState === 0"
-    [@bounceIn]="{ value: animationState, params: { delay: 50 + 200 * index } }"
-  >
-    <div class="max-w-md mx-auto">
-      <div
-        *ngIf="post?.feature_images"
-        class="h-[236px]"
-        [style]="'background-image:url(' + post?.feature_images + ');background-size:cover;background-position:center'"
-      ></div>
-      <div *ngIf="!post?.feature_images" class="h-[236px] flex items-center justify-center border-b border-teal-400/20">
-        <span>No Preview Image</span>
-      </div>
-
-      <div class="p-4 sm:p-6">
-        <div class="flex flex-row">
-          <p class="text-[15px] font-bold text-[#0FB478]">{{ post?.date | date: "mediumDate" }}</p>
-        </div>
-        <p class="font-bold text-[18px] leading-7 mb-3 mt-2">{{ post?.title?.rendered }}</p>
-        <a
-          target="_blank"
-          [href]="post?.link"
-          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Read more
-          <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </article>
-</ng-template>

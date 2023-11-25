@@ -22,7 +22,7 @@ export interface IAnimationOptions {
    *
    * Default: 'together'
    */
-  animateChildren?: 'before' | 'together' | 'after' | 'none';
+  animateChildren?: "before" | "together" | "after" | "none";
 }
 
 export interface IAttentionSeekerAnimationOptions extends IAnimationOptions {
@@ -34,5 +34,5 @@ export interface IAttentionSeekerAnimationOptions extends IAnimationOptions {
    *
    * Cannot be dynamic
    */
-  direction?: '<=>' | '=>';
+  direction?: "<=>" | "=>";
 }

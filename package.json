@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prettier": "prettier --write \"./src/**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
     "start": "ng serve --port 4400",
-    "build": "ng build",
+    "build": "ng build --output-path docs --base-href /",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:deploy": "ng build --output-path docs --base-href /"
+    "prettier": "prettier --write \"./src/**/*.{js,json,css,scss,less,md,ts,html,component.html}\""
   },
   "private": true,
   "dependencies": {

@@ -18,9 +18,9 @@ import { Observable, distinctUntilChanged, map } from "rxjs";
     "[class.opacity-0]": `animationState === 0`,
   },
   animations: [
-    fadeInLeftAnimation({anchor: 'fadeInLeft', translate: '150px', duration: 800}),
-    fadeInRightAnimation({anchor: 'fadeInRight', translate: '150px', duration: 800}),
-  ]
+    fadeInLeftAnimation({ anchor: "fadeInLeft", translate: "150px", duration: 800 }),
+    fadeInRightAnimation({ anchor: "fadeInRight", translate: "150px", duration: 800 }),
+  ],
 })
 export class ExperienceItemComponent implements OnInit {
   private el = inject(ElementRef);
@@ -32,15 +32,15 @@ export class ExperienceItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.scrollPosition$
-    .pipe(
-      map((scrollPosition: number) => {
-        return scrollPosition - 80 >= this.el.nativeElement.offsetTop;
-      }),
-      distinctUntilChanged()
-    )
-    .subscribe((visible: boolean) => {
-      this.animationState = visible ? 1 : 0;
-      this.cdr.detectChanges();
-    });
+      .pipe(
+        map((scrollPosition: number) => {
+          return scrollPosition - 80 >= this.el.nativeElement.offsetTop;
+        }),
+        distinctUntilChanged()
+      )
+      .subscribe((visible: boolean) => {
+        this.animationState = visible ? 1 : 0;
+        this.cdr.detectChanges();
+      });
   }
 }

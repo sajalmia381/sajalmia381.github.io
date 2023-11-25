@@ -9,13 +9,13 @@ import { Observable } from "rxjs";
 export class HomeApi {
   headerOptions: any = {
     // headers: new HttpHeaders({
-      // 'Content-Type': 'application/json'
+    // 'Content-Type': 'application/json'
     // }),
     params: {
       _fields: `title,feature_images,date,link`,
       per_page: 6,
       page: 1,
-    }
+    },
   };
 
   constructor(

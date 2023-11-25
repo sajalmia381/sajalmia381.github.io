@@ -4,5 +4,5 @@ export interface IPost {
   link: string | undefined;
   feature_images: string | undefined;
   title: ITitle | undefined;
-  data: string | undefined;
+  date: string | undefined;
 }

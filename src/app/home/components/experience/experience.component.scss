@@ -12,7 +12,24 @@
     // Element
     &_desc {
       font-size: 0.95rem;
-      margin-top: 6px;
+      margin-top: 3px;
+
+      li {
+        position: relative;
+        padding-left: 20px;
+        margin-top: 3px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 9px;
+          left: 0;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          @apply bg-primary
+        }
+      }
     }
 
     &_item {
@@ -30,10 +47,34 @@
     &_title {
       font-size: 1.2rem;
       line-height: calc(1.2rem + 10px);
+
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
       &_link {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
+        margin-left: 6px;
+        transition: all 0.2s linear;
+
+        svg {
+          width: 14px;
+          path {
+            fill: #fff;
+            transition: all 0.2s linear;
+          }
+        }
+
+        &:hover {
+          @apply text-primary;
+
+          svg {
+            path {
+              @apply fill-primary;
+            }
+          }
+        }
       }
     }
 

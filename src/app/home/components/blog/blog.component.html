@@ -44,11 +44,15 @@
 <ng-template #postContent>
   <!-- This is an example component -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6" *ngIf="posts$ | async as postList; else emptyMsg">
-    <mia-blog-card *ngFor="let post of postList; let i = index" [post]="post" [index]="i" [scrollBottomPosition$]="scrollBottomPosition$"></mia-blog-card>
+    <mia-blog-card
+      *ngFor="let post of postList; let i = index"
+      [post]="post"
+      [index]="i"
+      [scrollBottomPosition$]="scrollBottomPosition$"
+    ></mia-blog-card>
   </div>
 </ng-template>
 
 <ng-template #emptyMsg>
   <h4>Post is not found!</h4>
 </ng-template>
-

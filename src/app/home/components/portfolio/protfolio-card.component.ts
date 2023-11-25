@@ -10,7 +10,7 @@ import { fadeInUpAnimation } from "@shared/animations";
     <article
       class="w-full bg-[#ecebe1] bg-opacity-10 rounded-3xl shadow-xl overflow-hidden"
       [class.opacity-0]="animationState === 0"
-      [@fadeInUp]="{ value: animationState, params: { delay: 20 + (100 * index) } }"
+      [@fadeInUp]="{ value: animationState, params: { delay: 20 + 100 * index } }"
     >
       <div class="max-w-md mx-auto">
         <div

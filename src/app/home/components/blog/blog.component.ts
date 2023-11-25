@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from "@angular/core";
 import { HomeFacade } from "../../home.facade";
-import {  distinctUntilChanged, map } from "rxjs";
+import { distinctUntilChanged, map } from "rxjs";
 import { bounceInAnimation } from "@shared/animations";
 import { ScrollComponent } from "@shared/models/scroll.component";
 
@@ -8,9 +8,7 @@ import { ScrollComponent } from "@shared/models/scroll.component";
   selector: "mia-blog",
   templateUrl: "./blog.component.html",
   styleUrls: ["./blog.component.scss"],
-  animations: [
-    bounceInAnimation({anchor: 'bounceIn', duration: 800})
-  ]
+  animations: [bounceInAnimation({ anchor: "bounceIn", duration: 800 })],
 })
 export class BlogComponent extends ScrollComponent implements OnInit {
   private homeFacade = inject(HomeFacade);
@@ -26,13 +24,13 @@ export class BlogComponent extends ScrollComponent implements OnInit {
     this.scrollBottomPosition$
       .pipe(
         map((scrollPosition: number) => {
-          return scrollPosition - 220 >= this.el.nativeElement.offsetTop
+          return scrollPosition - 220 >= this.el.nativeElement.offsetTop;
         }),
         distinctUntilChanged()
       )
       .subscribe((visible: boolean) => {
         this.animationState = visible ? 1 : 0;
-      })
+      });
   }
 
   loadPosts(): void {

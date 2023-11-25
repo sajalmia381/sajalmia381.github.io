@@ -8,9 +8,9 @@ import { ScrollService } from "@shared/services/scroll.service";
 })
 export class HomeComponent {
   constructor(private scrollService: ScrollService) {}
-  
-  @HostListener('window:scroll', ['$event'])
+
+  @HostListener("window:scroll", ["$event"])
   onScroll() {
-    this.scrollService.update({scrollY: window.scrollY, innerHeight: window.innerHeight})
+    this.scrollService.update({ scrollY: window.scrollY, innerHeight: window.innerHeight });
   }
 }

@@ -1,4 +1,4 @@
-import { animateChild, AnimationTriggerMetadata, query, transition, trigger } from '@angular/animations';
+import { animateChild, AnimationTriggerMetadata, query, transition, trigger } from "@angular/animations";
 
 interface IAnimateChildrenOnLeaveOptions {
   /**
@@ -10,7 +10,7 @@ interface IAnimateChildrenOnLeaveOptions {
 }
 
 export function animateChildrenOnLeaveAnimation(options?: IAnimateChildrenOnLeaveOptions): AnimationTriggerMetadata {
-  return trigger((options && options.anchor) || 'animateChildrenOnLeave', [
-    transition(':leave', [query('@*', animateChild(), { optional: true })])
+  return trigger((options && options.anchor) || "animateChildrenOnLeave", [
+    transition(":leave", [query("@*", animateChild(), { optional: true })]),
   ]);
 }

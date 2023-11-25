@@ -23,8 +23,8 @@ export {
   tadaAnimation,
   tadaOnEnterAnimation,
   wobbleAnimation,
-  wobbleOnEnterAnimation
-} from './attention-seekers';
+  wobbleOnEnterAnimation,
+} from "./attention-seekers";
 export {
   IBounceInDownAnimationOptions,
   IBounceInLeftAnimationOptions,
@@ -39,8 +39,8 @@ export {
   bounceInRightAnimation,
   bounceInRightOnEnterAnimation,
   bounceInUpAnimation,
-  bounceInUpOnEnterAnimation
-} from './bouncing-entrances';
+  bounceInUpOnEnterAnimation,
+} from "./bouncing-entrances";
 export {
   IBounceOutDownAnimationOptions,
   IBounceOutLeftAnimationOptions,
@@ -55,8 +55,8 @@ export {
   bounceOutRightAnimation,
   bounceOutRightOnLeaveAnimation,
   bounceOutUpAnimation,
-  bounceOutUpOnLeaveAnimation
-} from './bouncing-exits';
+  bounceOutUpOnLeaveAnimation,
+} from "./bouncing-exits";
 export {
   IFadeInDownAnimationOptions,
   IFadeInDownBigAnimationOptions,
@@ -83,8 +83,8 @@ export {
   fadeInUpAnimation,
   fadeInUpBigAnimation,
   fadeInUpBigOnEnterAnimation,
-  fadeInUpOnEnterAnimation
-} from './fading-entrances';
+  fadeInUpOnEnterAnimation,
+} from "./fading-entrances";
 export {
   IFadeOutDownAnimationOptions,
   IFadeOutDownBigAnimationOptions,
@@ -111,8 +111,8 @@ export {
   fadeOutUpAnimation,
   fadeOutUpBigAnimation,
   fadeOutUpBigOnLeaveAnimation,
-  fadeOutUpOnLeaveAnimation
-} from './fading-exits';
+  fadeOutUpOnLeaveAnimation,
+} from "./fading-exits";
 export {
   IFlipInXAnimationOptions,
   IFlipInYAnimationOptions,
@@ -127,16 +127,16 @@ export {
   flipOutXAnimation,
   flipOutXOnLeaveAnimation,
   flipOutYAnimation,
-  flipOutYOnLeaveAnimation
-} from './flippers';
+  flipOutYOnLeaveAnimation,
+} from "./flippers";
 export {
   ILightSpeedInAnimationOptions,
   ILightSpeedOutAnimationOptions,
   lightSpeedInAnimation,
   lightSpeedInOnEnterAnimation,
   lightSpeedOutAnimation,
-  lightSpeedOutOnLeaveAnimation
-} from './light-speed';
+  lightSpeedOutOnLeaveAnimation,
+} from "./light-speed";
 export {
   IRotateInAnimationOptions,
   IRotateInDownLeftAnimationOptions,
@@ -152,8 +152,8 @@ export {
   rotateInUpLeftAnimation,
   rotateInUpLeftOnEnterAnimation,
   rotateInUpRightAnimation,
-  rotateInUpRightOnEnterAnimation
-} from './rotating-entrances';
+  rotateInUpRightOnEnterAnimation,
+} from "./rotating-entrances";
 export {
   IRotateOutAnimationOptions,
   IRotateOutDownLeftAnimationOptions,
@@ -169,8 +169,8 @@ export {
   rotateOutUpLeftAnimation,
   rotateOutUpLeftOnLeaveAnimation,
   rotateOutUpRightAnimation,
-  rotateOutUpRightOnLeaveAnimation
-} from './rotating-exits';
+  rotateOutUpRightOnLeaveAnimation,
+} from "./rotating-exits";
 export {
   ISlideInDownAnimationOptions,
   ISlideInLeftAnimationOptions,
@@ -183,8 +183,8 @@ export {
   slideInRightAnimation,
   slideInRightOnEnterAnimation,
   slideInUpAnimation,
-  slideInUpOnEnterAnimation
-} from './sliding-entrances';
+  slideInUpOnEnterAnimation,
+} from "./sliding-entrances";
 export {
   ISlideOutDownAnimationOptions,
   ISlideOutLeftAnimationOptions,
@@ -197,8 +197,8 @@ export {
   slideOutRightAnimation,
   slideOutRightOnLeaveAnimation,
   slideOutUpAnimation,
-  slideOutUpOnLeaveAnimation
-} from './sliding-exits';
+  slideOutUpOnLeaveAnimation,
+} from "./sliding-exits";
 export {
   zoomInAnimation,
   zoomInDownAnimation,
@@ -209,8 +209,8 @@ export {
   zoomInRightAnimation,
   zoomInRightOnEnterAnimation,
   zoomInUpAnimation,
-  zoomInUpOnEnterAnimation
-} from './zooming-entrances';
+  zoomInUpOnEnterAnimation,
+} from "./zooming-entrances";
 export {
   zoomOutAnimation,
   zoomOutDownAnimation,
@@ -221,8 +221,8 @@ export {
   zoomOutRightAnimation,
   zoomOutRightOnLeaveAnimation,
   zoomOutUpAnimation,
-  zoomOutUpOnLeaveAnimation
-} from './zooming-exits';
+  zoomOutUpOnLeaveAnimation,
+} from "./zooming-exits";
 export {
   IRollInAnimationOptions,
   IRollOutAnimationOptions,
@@ -233,8 +233,8 @@ export {
   rollInAnimation,
   rollInOnEnterAnimation,
   rollOutAnimation,
-  rollOutOnLeaveAnimation
-} from './specials';
+  rollOutOnLeaveAnimation,
+} from "./specials";
 export {
   animateChildrenOnLeaveAnimation,
   collapseAnimation,
@@ -248,5 +248,5 @@ export {
   fadeInExpandRightOnEnterAnimation,
   fadeOutCollapseLeftOnLeaveAnimation,
   hueRotateAnimation,
-  rotateAnimation
-} from './other';
+  rotateAnimation,
+} from "./other";

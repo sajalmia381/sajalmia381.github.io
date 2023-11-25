@@ -1,19 +1,17 @@
-import { Component, OnInit, ViewChildren, inject } from "@angular/core";
+import { Component, OnInit, inject } from "@angular/core";
 import { HomeFacade } from "../../home.facade";
-import { fadeInUpAnimation } from "@shared/animations";
-import { ScrollComponent } from "@shared/models/scroll.component";
-import { distinctUntilChanged, map } from "rxjs";
+import { ScrollService } from "@shared/services/scroll.service";
 
 @Component({
-  selector: "mia-home-portfolio",
+  selector: "mia-portfolio",
   templateUrl: "./portfolio.component.html",
   styleUrls: ["./portfolio.component.scss"],
-  animations: [fadeInUpAnimation({ anchor: "fadeInUp", translate: "150px", duration: 800 })],
 })
-export class PortfolioComponent extends ScrollComponent implements OnInit {
+export class PortfolioComponent implements OnInit {
   private homeFacade = inject(HomeFacade);
+  private scrollService = inject(ScrollService);
 
-  animationState = 0;
+  public scrollBottomPosition$ = this.scrollService.scrollBottomPosition$;
 
   isLoading: boolean = true;
   data$ = this.homeFacade.getPortfolio$();
@@ -21,16 +19,6 @@ export class PortfolioComponent extends ScrollComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPosts();
-    this.scrollBottomPosition$
-      .pipe(
-        map((scrollPosition: number) => {
-          return scrollPosition - 250 >= this.el.nativeElement.offsetTop;
-        }),
-        distinctUntilChanged()
-      )
-      .subscribe((visible: boolean) => {
-        this.animationState = visible ? 1 : 0;
-      });
   }
 
   loadPosts(): void {

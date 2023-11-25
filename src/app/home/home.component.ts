@@ -11,7 +11,6 @@ export class HomeComponent {
   
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    // console.log("update")
     this.scrollService.update({scrollY: window.scrollY, innerHeight: window.innerHeight})
   }
 }

@@ -4,7 +4,7 @@ type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] exte
 
 type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>;
 
-type ISkill = {
+export type ISkill = {
   name: string;
   wight: Range<1, 100>;
   progressBarColor?: string;

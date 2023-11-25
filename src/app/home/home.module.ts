@@ -17,6 +17,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { ToolbarComponent } from "./components/toolbar/toolbar.component";
 import { RouterModule } from "@angular/router";
 import { ExperienceItemComponent } from "./components/experience/experience-item/experience-item.component";
+import { ProgressBar } from "./components/skill/progress-bar.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ExperienceItemComponent } from "./components/experience/experience-item
     ExperienceComponent,
     ExperienceItemComponent,
     SkillComponent,
+    ProgressBar,
     ContactComponent,
     FooterComponent,
   ],

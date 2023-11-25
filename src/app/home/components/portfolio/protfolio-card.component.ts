@@ -16,7 +16,7 @@ import { fadeInUpAnimation } from "@shared/animations";
         <div
           *ngIf="item?.feature_images"
           class="h-[210px]"
-          [style]="'background-image:url(' + item?.feature_images + ');background-size:cover;background-position:center'"
+          [style]="'background-image:url(' + item.feature_images + ');background-size:cover;background-position:center'"
         ></div>
         <div *ngIf="!item?.feature_images" class="h-[236px] flex items-center justify-center border-b border-teal-400/20">
           <span>No Preview Image</span>
@@ -26,10 +26,10 @@ import { fadeInUpAnimation } from "@shared/animations";
           <!-- <div class="flex flex-row">
             <p class="text-[15px] font-bold text-[#0FB478]">{{ item?.date | date: "mediumDate" }}</p>
           </div> -->
-          <p class="font-bold text-[18px] leading-7 mb-3 mt-2">{{ item?.title?.rendered }}</p>
+          <p class="font-bold text-[18px] leading-7 mb-3 mt-2">{{ item.title?.rendered }}</p>
           <a
             target="_blank"
-            [href]="item?.link"
+            [href]="item.link"
             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Explore

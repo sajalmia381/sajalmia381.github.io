@@ -1,14 +1,11 @@
-import { Component, ElementRef, OnInit, inject } from "@angular/core";
+import { Component, OnInit, inject } from "@angular/core";
 import { HomeFacade } from "../../home.facade";
-import { Observable, distinctUntilChanged, map } from "rxjs";
-import { IPost } from "../../modals";
+import {  distinctUntilChanged, map } from "rxjs";
 import { bounceInAnimation } from "@shared/animations";
-import { ScrollService } from "@shared/services/scroll.service";
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ScrollComponent } from "@shared/models/scroll.component";
 
 @Component({
-  selector: "mia-home-blog",
+  selector: "mia-blog",
   templateUrl: "./blog.component.html",
   styleUrls: ["./blog.component.scss"],
   animations: [
@@ -51,5 +48,4 @@ export class BlogComponent extends ScrollComponent implements OnInit {
       },
     });
   }
-
 }

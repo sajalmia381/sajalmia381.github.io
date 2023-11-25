@@ -6,13 +6,19 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="contact_intro">
-        <h2 class="text-2xl xl:text-4xl font-bold">
-          Let's Chat. <br />
-          Tell me about your project
-        </h2>
-        <p class="mt-2">Let's create something together 🤟</p>
+        <div [@fadeInUp]="{ value: animationState }" [class.opacity-0]="animationState === 0">
+          <h2 class="text-2xl xl:text-4xl font-bold">
+            Let's Chat. <br />
+            Tell me about your project
+          </h2>
+          <p class="mt-2">Let's create something together 🤟</p>
+        </div>
 
-        <div class="flex items-center gap-4 shadow shadow-teal-400/5 bg-teal-400/5 p-4 mt-4">
+        <div
+          class="flex items-center gap-4 shadow shadow-teal-400/5 bg-teal-400/5 p-4 mt-4"
+          [@fadeInUp]="{ value: animationState, params: { delay: 300 } }"
+          [class.opacity-0]="animationState === 0"
+        >
           <div class="flex-none bg-teal-400/20 h-10 w-10 rounded flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
               <path
@@ -26,7 +32,12 @@
             <a class="text-primary" href="mailto:sajalmia.official@gmail.com" target="_blank">sajalmia.official&#64;gmail.com</a>
           </div>
         </div>
-        <div class="flex items-center gap-4 shadow shadow-teal-400/5 bg-teal-400/5 p-4 mt-4">
+
+        <div
+          class="flex items-center gap-4 shadow shadow-teal-400/5 bg-teal-400/5 p-4 mt-4"
+          [@fadeInUp]="{ value: animationState, params: { delay: 400 } }"
+          [class.opacity-0]="animationState === 0"
+        >
           <div class="flex-none bg-teal-400/20 h-10 w-10 rounded flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
               <path
@@ -42,23 +53,25 @@
         </div>
       </div>
       <div class="contact">
-        <h2 class="text-2xl xl:text-4xl font-bold mb-4">Send me a message 🚀</h2>
+        <h2 [@fadeInUp]="{ value: animationState }" [class.opacity-0]="animationState === 0" class="text-2xl xl:text-4xl font-bold mb-4">
+          Send me a message 🚀
+        </h2>
         <form class="w-full max-w-lg">
-          <div class="mb-6 md:mb-0">
+          <div class="mb-6 md:mb-0" [@fadeInUp]="{ value: animationState, params: { delay: 300 } }" [class.opacity-0]="animationState === 0">
             <input
               class="appearance-none block w-full bg-teal-400/5 border border-transparent rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-teal-400/10"
               type="text"
               placeholder="Full Name *"
             />
           </div>
-          <div class="mb-6 md:mb-0">
+          <div class="mb-6 md:mb-0" [@fadeInUp]="{ value: animationState, params: { delay: 400 } }" [class.opacity-0]="animationState === 0">
             <input
               class="appearance-none block w-full bg-teal-400/5 border border-transparent rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-teal-400/10"
               type="text"
               placeholder="Email address *"
             />
           </div>
-          <div class="mb-8 md:mb-0">
+          <div class="mb-8 md:mb-0" [@fadeInUp]="{ value: animationState, params: { delay: 500 } }" [class.opacity-0]="animationState === 0">
             <input
               class="appearance-none block w-full bg-teal-400/5 border border-transparent rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-teal-400/10"
               type="text"
@@ -66,7 +79,7 @@
             />
           </div>
 
-          <div class="mb-6 md:mb-0">
+          <div class="mb-6 md:mb-0" [@fadeInUp]="{ value: animationState, params: { delay: 600, translate: '50px' } }" [class.opacity-0]="animationState === 0">
             <label class="block tracking-wide font-bold mb-2"> Tell me more about your project * </label>
             <textarea
               rows="3"
@@ -76,6 +89,8 @@
             </textarea>
           </div>
           <button
+            [@fadeInUp]="{ value: animationState, params: { delay: 700 } }"
+            [class.opacity-0]="animationState === 0"
             type="button"
             class="text-gray-900 bg-primary hover:bg-teal-500 focus:ring-2 focus:bg-teal-600 font-medium rounded-md px-8 py-2 mr-2 mb-2 focus:outline-none"
           >

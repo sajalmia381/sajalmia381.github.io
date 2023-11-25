@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, inject } from "@angular/core";
 import { HomeFacade } from "../../home.facade";
-import { Observable } from "rxjs";
+import { Observable, distinctUntilChanged, map } from "rxjs";
 import { IPost } from "../../modals";
 import { bounceInAnimation } from "@shared/animations";
 import { ScrollService } from "@shared/services/scroll.service";
@@ -26,14 +26,16 @@ export class BlogComponent extends ScrollComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPosts();
-    this.scrollBottomPosition$.subscribe((scrollPosition: number) => {
-      const componentPosition = this.el.nativeElement.offsetTop;
-      if (scrollPosition - 220 >= componentPosition) {
-        this.animationState = 1;
-      } else {
-        this.animationState = 0;
-      }
-    })
+    this.scrollBottomPosition$
+      .pipe(
+        map((scrollPosition: number) => {
+          return scrollPosition - 220 >= this.el.nativeElement.offsetTop
+        }),
+        distinctUntilChanged()
+      )
+      .subscribe((visible: boolean) => {
+        this.animationState = visible ? 1 : 0;
+      })
   }
 
   loadPosts(): void {

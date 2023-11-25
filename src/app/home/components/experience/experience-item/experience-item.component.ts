@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, inject } from "@angular/core";
 import { fadeInLeftAnimation, fadeInRightAnimation } from "@shared/animations";
-import { Observable } from "rxjs";
+import { Observable, distinctUntilChanged, map } from "rxjs";
 
 @Component({
   selector: "mia-experience-item",
@@ -31,14 +31,16 @@ export class ExperienceItemComponent implements OnInit {
   animationState = 0;
 
   ngOnInit(): void {
-    this.scrollPosition$.subscribe((scrollPosition: number) => {
-      const componentPosition = this.el.nativeElement.offsetTop;
-      if (scrollPosition - 80 >= componentPosition) {
-        this.animationState = 1;
-      } else {
-        this.animationState = 0;
-      }
+    this.scrollPosition$
+    .pipe(
+      map((scrollPosition: number) => {
+        return scrollPosition - 80 >= this.el.nativeElement.offsetTop;
+      }),
+      distinctUntilChanged()
+    )
+    .subscribe((visible: boolean) => {
+      this.animationState = visible ? 1 : 0;
       this.cdr.detectChanges();
-    })
+    });
   }
 }

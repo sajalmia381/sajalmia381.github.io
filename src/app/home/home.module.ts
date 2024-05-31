@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { HomeComponent } from "./home.component";
 
 import { HomeApi } from "./api/home.api";
@@ -21,24 +21,20 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { ToolbarComponent } from "./components/toolbar/toolbar.component";
 import { RouterModule } from "@angular/router";
 
-@NgModule({
-  declarations: [
-    HomeComponent,
-    HeroComponent,
-    ToolbarComponent,
-    BlogComponent,
-    BlogCardComponent,
-    PortfolioComponent,
-    PortfolioCardComponent,
-    ExperienceComponent,
-    ExperienceItemComponent,
-    SkillComponent,
-    ProgressBar,
-    ContactComponent,
-    FooterComponent,
-  ],
-  imports: [CommonModule, HttpClientModule, RouterModule],
-  exports: [HomeComponent],
-  providers: [HomeApi, HomeState, HomeFacade],
-})
+@NgModule({ declarations: [
+        HomeComponent,
+        HeroComponent,
+        ToolbarComponent,
+        BlogComponent,
+        BlogCardComponent,
+        PortfolioComponent,
+        PortfolioCardComponent,
+        ExperienceComponent,
+        ExperienceItemComponent,
+        SkillComponent,
+        ProgressBar,
+        ContactComponent,
+        FooterComponent,
+    ],
+    exports: [HomeComponent], imports: [CommonModule, RouterModule], providers: [HomeApi, HomeState, HomeFacade, provideHttpClient(withInterceptorsFromDi())] })
 export class HomeModule {}

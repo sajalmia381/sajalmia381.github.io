@@ -27,7 +27,7 @@
           width: 5px;
           height: 5px;
           border-radius: 50%;
-          @apply bg-primary;
+          background-color: var(--color-primary);
         }
       }
     }
@@ -67,11 +67,11 @@
         }
 
         &:hover {
-          @apply text-primary;
+          color: var(--color-primary);
 
           svg {
             path {
-              @apply fill-primary;
+              fill: var(--color-primary);
             }
           }
         }
@@ -96,7 +96,14 @@
     display: inline-flex;
     flex-wrap: wrap;
     li {
-      @apply rounded-full bg-teal-400/40 px-3 py-1 text-xs font-medium leading-5 text-teal-300;
+      border-radius: 9999px;
+      background-color: color-mix(in oklab, var(--color-teal-400) 40%, transparent);
+      padding-inline: 0.75rem;
+      padding-block: 0.25rem;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+      color: var(--color-teal-300);
     }
   }
 }

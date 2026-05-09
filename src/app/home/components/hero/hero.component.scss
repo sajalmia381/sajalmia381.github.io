@@ -79,7 +79,7 @@
         // background: #f7cac9;
         border-radius: 50%;
         animation: pulse-border 2s ease-out infinite;
-        @apply bg-primary;
+        background-color: var(--color-primary);
       }
 
       // &:after {

@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { DOCUMENT } from "@angular/common";
 
 @Component({
+  standalone: false,
   selector: "mia-toolbar",
   templateUrl: "./toolbar.component.html",
   styleUrl: "./toolbar.component.scss",

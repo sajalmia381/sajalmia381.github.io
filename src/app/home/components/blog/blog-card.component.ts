@@ -4,6 +4,7 @@ import { IPost } from "../../modals";
 import { Observable, distinctUntilChanged, map } from "rxjs";
 
 @Component({
+  standalone: false,
   selector: "mia-blog-card",
   template: `
     <article

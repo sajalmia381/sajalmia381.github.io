@@ -4,6 +4,7 @@ import { IPortfolio } from "../../modals";
 import { fadeInUpAnimation } from "@shared/animations";
 
 @Component({
+  standalone: false,
   selector: "mia-portfolio-card",
   animations: [fadeInUpAnimation({ anchor: "fadeInUp", translate: "150px", duration: 800 })],
   template: `

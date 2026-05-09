@@ -3,6 +3,7 @@ import { fadeInLeftAnimation, fadeInRightAnimation } from "@shared/animations";
 import { Observable, distinctUntilChanged, map } from "rxjs";
 
 @Component({
+  standalone: false,
   selector: "mia-experience-item",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `

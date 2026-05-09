@@ -2,6 +2,7 @@ import { Component, HostListener } from "@angular/core";
 import { ScrollService } from "@shared/services/scroll.service";
 
 @Component({
+  standalone: false,
   selector: "mia-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],

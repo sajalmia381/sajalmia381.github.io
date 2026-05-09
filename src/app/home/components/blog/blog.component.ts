@@ -3,6 +3,7 @@ import { HomeFacade } from "../../home.facade";
 import { ScrollComponent } from "@shared/models/scroll.component";
 
 @Component({
+  standalone: false,
   selector: "mia-blog",
   templateUrl: "./blog.component.html",
   styleUrls: ["./blog.component.scss"],

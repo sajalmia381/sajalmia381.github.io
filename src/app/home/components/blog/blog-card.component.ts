@@ -13,13 +13,13 @@ import { Observable, distinctUntilChanged, map } from "rxjs";
       [@bounceIn]="{ value: animationState, params: { delay: 20 + 100 * index } }"
     >
       <div class="max-w-md mx-auto">
-        @if (post?.feature_images) {
+        @if (post.feature_images) {
           <div
             class="h-[236px]"
             [style]="'background-image:url(' + post.feature_images + ');background-size:cover;background-position:center'"
           ></div>
         }
-        @if (!post?.feature_images) {
+        @if (!post.feature_images) {
           <div class="h-[236px] flex items-center justify-center border-b border-teal-400/20">
             <span>No Preview Image</span>
           </div>

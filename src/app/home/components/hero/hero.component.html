@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="hero_title">
       <span class="hero_title_sub">
-        @for (letter of grettingText; track letter; let i = $index; let last = $last) {
+        @for (letter of grettingText; track i; let i = $index; let last = $last) {
           <span
             [@enterLetterAnim1]="{ value: '', params: { delay: 30 + i * 50 } }"
             [@letterAnim1]="{ value: animationState, params: { delay: i * 20 } }"
@@ -13,7 +13,7 @@
         }
       </span>
       <br />
-      @for (letter of titleText; track letter; let i = $index; let last = $last) {
+      @for (letter of titleText; track i; let i = $index; let last = $last) {
         <span
           [@enterLetterAnim2]="{ value: '', params: { delay: 800 + getDelay(i, titleText.length) } }"
           [@letterAnim2]="{ value: animationState, params: { delay: 500 + i * 30 } }"

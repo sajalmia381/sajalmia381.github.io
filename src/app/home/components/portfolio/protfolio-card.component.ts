@@ -14,13 +14,13 @@ import { fadeInUpAnimation } from "@shared/animations";
       [@fadeInUp]="{ value: animationState, params: { delay: 20 + 100 * index } }"
     >
       <div class="max-w-md mx-auto">
-        @if (item?.feature_images) {
+        @if (item.feature_images) {
           <div
             class="h-[210px]"
             [style]="'background-image:url(' + item.feature_images + ');background-size:cover;background-position:center'"
           ></div>
         }
-        @if (!item?.feature_images) {
+        @if (!item.feature_images) {
           <div class="h-[236px] flex items-center justify-center border-b border-teal-400/20">
             <span>No Preview Image</span>
           </div>

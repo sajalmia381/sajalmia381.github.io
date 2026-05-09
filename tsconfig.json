@@ -19,17 +19,9 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
     "paths": {
-      "@package/*": [
-        "src/app/package/*"
-      ],
-      "@shared/*": [
-        "src/app/shared/*"
-      ]
+      "@package/*": ["src/app/package/*"],
+      "@shared/*": ["src/app/shared/*"]
     }
   },
   "angularCompilerOptions": {

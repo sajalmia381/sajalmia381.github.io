@@ -13,14 +13,17 @@ import { Observable, distinctUntilChanged, map } from "rxjs";
       [@bounceIn]="{ value: animationState, params: { delay: 20 + 100 * index } }"
     >
       <div class="max-w-md mx-auto">
-        <div
-          *ngIf="post?.feature_images"
-          class="h-[236px]"
-          [style]="'background-image:url(' + post.feature_images + ');background-size:cover;background-position:center'"
-        ></div>
-        <div *ngIf="!post?.feature_images" class="h-[236px] flex items-center justify-center border-b border-teal-400/20">
-          <span>No Preview Image</span>
-        </div>
+        @if (post?.feature_images) {
+          <div
+            class="h-[236px]"
+            [style]="'background-image:url(' + post.feature_images + ');background-size:cover;background-position:center'"
+          ></div>
+        }
+        @if (!post?.feature_images) {
+          <div class="h-[236px] flex items-center justify-center border-b border-teal-400/20">
+            <span>No Preview Image</span>
+          </div>
+        }
 
         <div class="p-4 sm:p-6">
           <div class="flex flex-row">

@@ -4,7 +4,9 @@
       <h2 class="section_title">My Skills</h2>
     </div>
     <div class="skill_list">
-      <mia-progress-bar *ngFor="let skill of skill_list" [data]="skill"></mia-progress-bar>
+      @for (skill of skill_list; track skill) {
+        <mia-progress-bar [data]="skill"></mia-progress-bar>
+      }
     </div>
   </div>
 </section>

@@ -20,11 +20,19 @@ npx ng test --include='src/app/home/home.component.spec.ts'
 
 ## Architecture
 
-Angular 18 single-page portfolio/resume app deployed to GitHub Pages. Build output goes to `docs/` (not the default `dist/`), which GitHub Pages serves from the `master` branch.
+Angular 18 + Angular Material 18 single-page portfolio/resume app deployed to GitHub Pages. Build output goes to `docs/` (not the default `dist/`), which GitHub Pages serves from the `master` branch.
 
 ### NgModule vs standalone
 
 **Existing code uses NgModule architecture** — `AppModule`, `HomeModule`, and all component `declarations[]`. The `.claude/rules/angular.md` mandates standalone components for any new work. When adding new components, follow the standalone pattern (no NgModule); when editing existing components, leave the NgModule registration in place.
+
+### Home page structure
+
+`HomeComponent` renders eight sections in order: `mia-toolbar`, `mia-hero`, `mia-experience`, `mia-skill`, `mia-portfolio`, `mia-blog`, `mia-contact`, `mia-footer`.
+
+**Static sections** (hardcoded data in templates/components): toolbar, hero, experience, skill, contact, footer.
+
+**API-driven sections** (data fetched at runtime): portfolio and blog — both subscribe to `HomeFacade` observables.
 
 ### Data flow pattern
 
@@ -35,6 +43,10 @@ Each feature uses a three-layer pattern:
 - **Facade** (`home.facade.ts`) — the only class components talk to; coordinates API + State and exposes plain observables
 
 Components never call `HomeApi` or `HomeState` directly.
+
+### Data models
+
+TypeScript interfaces live in `src/app/home/modals/` (directory is named `modals`, not `models` — a historical quirk). The barrel export is `modals/index.ts`.
 
 ### Path aliases (tsconfig.json)
 
@@ -49,13 +61,23 @@ Components never call `HomeApi` or `HomeState` directly.
 
 Blog posts and portfolio items are fetched from the WordPress REST API at `https://techincent.com/wp-json/wp`. The base URL flows from `environment.ts` → `APP_ENV` injection token → `HomeApi`. Endpoints: `v2/posts` and `v2/portfolio`, sliced to 6 items each in the facade.
 
+Both dev and production environments point to the same live API — there is no mock/local API.
+
+### Scroll-triggered animations
+
+`ScrollService` tracks the current scroll position. Components that animate on scroll extend the base class in `src/app/shared/models/scroll.component.ts`, which reads from `ScrollService` and exposes a boolean for triggering the Angular animation. `HomeComponent` listens to `(window:scroll)` and updates `ScrollService`.
+
 ### Tailwind
 
 Tailwind is compiled as a **separate CLI step before Angular builds** — `src/tailwind.css` → `src/tailwind.generated.css`. `npm start` and `npm run build` run this automatically. Never edit `tailwind.generated.css`. All design tokens (`--color-primary`, breakpoints, spacing) live in `src/tailwind.css` — there is no `tailwind.config.js`.
 
 ### Animations
 
-`src/app/shared/animations/` is a custom animate.css-inspired library of Angular `AnimationReferenceMetadata` factories (fade, zoom, bounce, rotate, slide categories). Import named factories from `@shared/animations` and register them in a component's `animations: []` metadata array with an `anchor` string.
+`src/app/shared/animations/` is a custom animate.css-inspired library of Angular `AnimationReferenceMetadata` factories organized into categories: fading, bouncing, zooming, rotating, sliding, flippers, light-speed, attention-seekers, specials. Import named factories from `@shared/animations` and register them in a component's `animations: []` metadata array with an `anchor` string.
+
+### Angular Material
+
+Angular Material 18 components are used for UI primitives. Import individual Material modules in each component's `imports` array. Use Material typography and the colour system; layer Tailwind utilities on top for spacing and layout — do not override Material baseline CSS.
 
 ### Component selector prefix
 

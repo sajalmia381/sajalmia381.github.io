@@ -32,7 +32,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/tailwind.generated.css",
+              "src/tailwind.scss",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -101,7 +101,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/tailwind.generated.css",
+              "src/tailwind.scss",
               "src/styles.scss"
             ],
             "scripts": []

@@ -5,12 +5,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm start          # Compile Tailwind then serve on http://localhost:4400
-npm run build      # Compile Tailwind then produce production build → docs/
+npm start          # Serve on http://localhost:4400 (Tailwind compiled by Angular via PostCSS)
+npm run build      # Produce production build → docs/ (Tailwind compiled by Angular via PostCSS)
 npm test           # Run unit tests via Karma/Jasmine
 npm run prettier   # Format all source files
-npm run tailwind   # One-shot Tailwind compile (src/tailwind.css → src/tailwind.generated.css)
-npm run tailwind:watch  # Watch mode for Tailwind during development
 ```
 
 To run a single test file:
@@ -69,7 +67,7 @@ Both dev and production environments point to the same live API — there is no 
 
 ### Tailwind
 
-Tailwind is compiled as a **separate CLI step before Angular builds** — `src/tailwind.css` → `src/tailwind.generated.css`. `npm start` and `npm run build` run this automatically. Never edit `tailwind.generated.css`. All design tokens (`--color-primary`, breakpoints, spacing) live in `src/tailwind.css` — there is no `tailwind.config.js`.
+Tailwind is compiled **by Angular's build pipeline via PostCSS** (`@tailwindcss/postcss` in `.postcssrc.json`). `src/tailwind.scss` is referenced directly in `angular.json` styles — no separate compile step. All design tokens (`--color-primary`, breakpoints, spacing) live in `src/tailwind.scss` — there is no `tailwind.config.js`.
 
 ### Animations
 

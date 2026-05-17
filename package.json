@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "tailwind": "tailwindcss -i src/tailwind.css -o src/tailwind.generated.css",
-    "tailwind:watch": "tailwindcss -i src/tailwind.css -o src/tailwind.generated.css --watch",
-    "start": "npm run tailwind && ng serve --port 4400",
-    "build": "npm run tailwind && ng build --base-href /",
+    "start": "ng serve --port 4400",
+    "build": "ng build --base-href /",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prettier": "prettier --write \"./src/**/*.{js,json,css,scss,less,md,ts,html,component.html}\""

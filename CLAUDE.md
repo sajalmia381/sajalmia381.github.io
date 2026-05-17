@@ -18,7 +18,7 @@ npx ng test --include='src/app/home/home.component.spec.ts'
 
 ## Architecture
 
-Angular 18 + Angular Material 18 single-page portfolio/resume app deployed to GitHub Pages. Build output goes to `docs/` (not the default `dist/`), which GitHub Pages serves from the `master` branch.
+Angular 21 + Angular Material 21 single-page portfolio/resume app deployed to GitHub Pages. Build output goes to `docs/` (not the default `dist/`), which GitHub Pages serves from the `master` branch.
 
 ### NgModule vs standalone
 
@@ -64,6 +64,10 @@ Both dev and production environments point to the same live API — there is no 
 ### Scroll-triggered animations
 
 `ScrollService` tracks the current scroll position. Components that animate on scroll extend the base class in `src/app/shared/models/scroll.component.ts`, which reads from `ScrollService` and exposes a boolean for triggering the Angular animation. `HomeComponent` listens to `(window:scroll)` and updates `ScrollService`.
+
+### Static assets
+
+Static files (images, fonts, `favicon.ico`) live in `public/` at the project root — Angular 19+ serves this folder directly without any `assets[]` glob configuration. Do not use `src/assets/`.
 
 ### Tailwind
 

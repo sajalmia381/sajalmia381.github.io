@@ -3,6 +3,7 @@ import { HomeFacade } from "../../home.facade";
 import { ScrollService } from "@shared/services/scroll.service";
 
 @Component({
+  standalone: false,
   selector: "mia-portfolio",
   templateUrl: "./portfolio.component.html",
   styleUrls: ["./portfolio.component.scss"],

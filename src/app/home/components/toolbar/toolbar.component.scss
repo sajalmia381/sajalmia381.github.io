@@ -3,6 +3,7 @@
   position: sticky;
   top: 0;
   border-bottom: 1px solid;
-  @apply bg-gray-900 border-gray-500;
+  background-color: var(--color-gray-900);
+  border-color: var(--color-gray-500);
   z-index: 9999;
 }

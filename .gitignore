@@ -2,6 +2,7 @@
 
 # Compiled output
 /dist
+/src/tailwind.generated.css
 /tmp
 /out-tsc
 /bazel-out

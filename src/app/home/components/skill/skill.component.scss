@@ -8,11 +8,11 @@
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 1rem;
 
-    @screen sm {
+    @media (min-width: 576px) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @screen lg {
+    @media (min-width: 992px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.5rem;
     }

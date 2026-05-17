@@ -2,6 +2,7 @@ import { Component, HostListener } from "@angular/core";
 import { ScrollService } from "@shared/services/scroll.service";
 
 @Component({
+  standalone: false,
   selector: "mia-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
@@ -9,7 +10,7 @@ import { ScrollService } from "@shared/services/scroll.service";
 export class HomeComponent {
   constructor(private scrollService: ScrollService) {}
 
-  @HostListener("window:scroll", ["$event"])
+  @HostListener("window:scroll")
   onScroll() {
     this.scrollService.update({ scrollY: window.scrollY, innerHeight: window.innerHeight });
   }

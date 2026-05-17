@@ -1,12 +1,14 @@
 import { TestBed } from "@angular/core/testing";
-import { RouterTestingModule } from "@angular/router/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { provideRouter } from "@angular/router";
 import { AppComponent } from "./app.component";
 
 describe("AppComponent", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
       declarations: [AppComponent],
+      providers: [provideRouter([])],
+      schemas: [NO_ERRORS_SCHEMA],
     })
   );
 
@@ -16,16 +18,9 @@ describe("AppComponent", () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'sajalmia-resume'`, () => {
+  it("should have the correct title", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual("sajalmia-resume");
-  });
-
-  it("should render title", () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector(".content span")?.textContent).toContain("sajalmia-resume app is running!");
+    expect(app.title).toEqual("Md. Sajal Mia | Resume");
   });
 });

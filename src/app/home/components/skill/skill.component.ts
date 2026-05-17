@@ -11,6 +11,7 @@ export type ISkill = {
 };
 
 @Component({
+  standalone: false,
   selector: "mia-skill",
   templateUrl: "./skill.component.html",
   styleUrls: ["./skill.component.scss"],

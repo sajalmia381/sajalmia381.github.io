@@ -1,0 +1,37 @@
+# Cursor Rules — sajalmia381.github.io
+
+## Stack
+- Angular 18, TypeScript, Tailwind CSS, Angular Material
+- Single-page portfolio/resume app deployed to GitHub Pages
+
+## Commands
+- `npm start` — dev server on http://localhost:4400
+- `npm run build` — production build → `docs/` (not `dist/`)
+- `npm test` — Karma/Jasmine unit tests
+- `npm run prettier` — format all source files
+
+## Architecture rules
+- Each feature follows three layers: API → State → Facade
+- Components talk ONLY to the Facade — never to API or State directly
+- `HomeApi` makes HTTP calls; `HomeState` holds BehaviorSubject observables; `HomeFacade` coordinates both
+- All components use the `mia-` selector prefix
+
+## Path aliases
+- `@shared/*` → `src/app/shared/*` (animations, ScrollService)
+- `@package/*` → `src/app/package/*` (APP_ENV token, IEnv interface)
+- Always use aliases, never relative paths crossing feature boundaries
+
+## Animations
+- Custom library in `src/app/shared/animations/` — animate.css-inspired Angular factories
+- Import named factories from `@shared/animations`, register in component `animations: []` with an anchor string
+
+## Formatting
+- Prettier enforced via husky pre-commit hook
+- 140-char print width, double quotes, trailing commas (ES5)
+- Run `npm run prettier` before committing if bypassing the hook
+
+## Code style
+- No comments unless the WHY is non-obvious
+- No unused variables, no dead code
+- TypeScript strict mode — no implicit any
+- External data (blog posts, portfolio items) comes from WordPress REST API via `HomeApi`

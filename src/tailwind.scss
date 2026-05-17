@@ -1,0 +1,51 @@
+@use "tailwindcss";
+
+/* Scan all Angular source files for class names */
+@source ".";
+
+/* Class-based dark mode (replaces v3 darkMode: 'class') */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Breakpoints — replaces v3 theme.screens (overrides v4 defaults) */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: initial; /* remove v4's default 2xl (1536px) */
+  --breakpoint-xxl: 1440px; /* custom; enables xxl: prefix in templates */
+
+  /* Colors — from v3 theme.extend.colors */
+  --color-primary: #2dd4bf;
+  --color-accent: #420fe7;
+  --color-warn: #ff9966;
+  --color-light: #f3f2f4;
+
+  /* Spacing — from v3 theme.extend.spacing */
+  --spacing-page: 1rem;
+  --spacing-page-xxl: 1.25rem;
+}
+
+/* Container — v4 has no container plugin config; replicate v3 behaviour */
+@layer components {
+  .container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 15px;
+  }
+
+  @media (min-width: 576px) {
+    .container {
+      padding-inline: 30px;
+    }
+  }
+}
+
+/* Global styles that use @apply — must live here so the Tailwind plugin resolves them */
+body {
+  @apply bg-gray-900 text-slate-300;
+}
+
+.bg-theme-2 {
+  @apply bg-teal-400/40;
+}

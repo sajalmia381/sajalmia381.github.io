@@ -10,6 +10,7 @@ import {
 } from "@shared/animations";
 
 @Component({
+  standalone: false,
   selector: "mia-hero",
   templateUrl: "./hero.component.html",
   styleUrls: ["./hero.component.scss"],

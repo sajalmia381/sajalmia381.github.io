@@ -4,6 +4,7 @@ import { IPortfolio } from "../../modals";
 import { fadeInUpAnimation } from "@shared/animations";
 
 @Component({
+  standalone: false,
   selector: "mia-portfolio-card",
   animations: [fadeInUpAnimation({ anchor: "fadeInUp", translate: "150px", duration: 800 })],
   template: `
@@ -13,19 +14,22 @@ import { fadeInUpAnimation } from "@shared/animations";
       [@fadeInUp]="{ value: animationState, params: { delay: 20 + 100 * index } }"
     >
       <div class="max-w-md mx-auto">
-        <div
-          *ngIf="item?.feature_images"
-          class="h-[210px]"
-          [style]="'background-image:url(' + item.feature_images + ');background-size:cover;background-position:center'"
-        ></div>
-        <div *ngIf="!item?.feature_images" class="h-[236px] flex items-center justify-center border-b border-teal-400/20">
-          <span>No Preview Image</span>
-        </div>
+        @if (item.feature_images) {
+          <div
+            class="h-[210px]"
+            [style]="'background-image:url(' + item.feature_images + ');background-size:cover;background-position:center'"
+          ></div>
+        }
+        @if (!item.feature_images) {
+          <div class="h-[236px] flex items-center justify-center border-b border-teal-400/20">
+            <span>No Preview Image</span>
+          </div>
+        }
 
         <div class="p-4 sm:p-6">
           <!-- <div class="flex flex-row">
-            <p class="text-[15px] font-bold text-[#0FB478]">{{ item?.date | date: "mediumDate" }}</p>
-          </div> -->
+          <p class="text-[15px] font-bold text-[#0FB478]">{{ item?.date | date: "mediumDate" }}</p>
+        </div> -->
           <p class="font-bold text-[18px] leading-7 mb-3 mt-2">{{ item.title?.rendered }}</p>
           <a
             target="_blank"

@@ -4,6 +4,7 @@ import { ScrollComponent } from "@shared/models/scroll.component";
 import { distinctUntilChanged, map } from "rxjs/operators";
 
 @Component({
+  standalone: false,
   selector: "mia-footer",
   templateUrl: "./footer.component.html",
   styleUrls: ["./footer.component.scss"],

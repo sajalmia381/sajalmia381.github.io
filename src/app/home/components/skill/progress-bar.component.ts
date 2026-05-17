@@ -13,6 +13,7 @@ export function progressAnimation(): AnimationTriggerMetadata {
 }
 
 @Component({
+  standalone: false,
   selector: "mia-progress-bar",
   encapsulation: ViewEncapsulation.None,
   template: `

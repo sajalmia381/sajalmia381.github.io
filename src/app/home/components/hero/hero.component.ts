@@ -25,8 +25,8 @@ import {
   ],
 })
 export class HeroComponent {
-  readonly grettingText = "Hay! This is Sajal Mia,".split("");
-  readonly titleText = "Professional Software Engineer".split("");
+  readonly greetingText = "Hey! This is Sajal Mia,".split("");
+  readonly titleText = "Senior Software Engineer".split("");
 
   animationState = false;
   hueState = false;

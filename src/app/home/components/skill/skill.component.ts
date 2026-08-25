@@ -6,7 +6,7 @@ type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate
 
 export type ISkill = {
   name: string;
-  wight: Range<1, 100>;
+  weight: Range<1, 100>;
   progressBarColor?: string;
 };
 
@@ -20,91 +20,106 @@ export class SkillComponent {
   skill_list: ISkill[] = [
     {
       name: "HTML",
-      wight: 90,
+      weight: 90,
     },
     {
-      name: "CSS",
-      wight: 90,
+      name: "CSS / SASS",
+      weight: 90,
       progressBarColor: "bg-purple-500",
     },
     {
-      name: "SASS",
-      wight: 90,
+      name: "JavaScript",
+      weight: 90,
       progressBarColor: "bg-yellow-500",
     },
 
-    {
-      name: "Javascript",
-      wight: 90,
-    },
     {
       name: "TypeScript",
-      wight: 80,
-      progressBarColor: "bg-purple-500",
+      weight: 90,
     },
-    {
-      name: "Jquery",
-      wight: 60,
-      progressBarColor: "bg-yellow-500",
-    },
-
     {
       name: "Angular",
-      wight: 90,
+      weight: 90,
+      progressBarColor: "bg-purple-500",
     },
     {
       name: "Angular Material",
-      wight: 85,
-      progressBarColor: "bg-purple-500",
-    },
-    {
-      name: "RxJs",
-      wight: 80,
+      weight: 85,
       progressBarColor: "bg-yellow-500",
     },
 
     {
-      name: "NGRX",
-      wight: 70,
+      name: "RxJs",
+      weight: 80,
     },
     {
-      name: "Tailwindcss",
-      wight: 90,
+      name: "NGRX",
+      weight: 70,
       progressBarColor: "bg-purple-500",
     },
     {
-      name: "Bootstrap",
-      wight: 90,
+      name: "Tailwindcss",
+      weight: 90,
+      progressBarColor: "bg-yellow-500",
+    },
+
+    {
+      name: "React",
+      weight: 70,
+    },
+    {
+      name: "Next.js",
+      weight: 65,
+      progressBarColor: "bg-purple-500",
+    },
+    {
+      name: "SPFx / SharePoint",
+      weight: 60,
       progressBarColor: "bg-yellow-500",
     },
 
     {
       name: "NX",
-      wight: 70,
+      weight: 70,
     },
     {
       name: "Node",
-      wight: 70,
+      weight: 70,
       progressBarColor: "bg-purple-500",
     },
     {
-      name: "Express",
-      wight: 70,
+      name: "Go",
+      weight: 60,
       progressBarColor: "bg-yellow-500",
     },
 
     {
-      name: "Git",
-      wight: 90,
+      name: "PostgreSQL",
+      weight: 60,
     },
     {
-      name: "Docker",
-      wight: 40,
+      name: ".NET",
+      weight: 50,
       progressBarColor: "bg-purple-500",
     },
     {
+      name: "Git",
+      weight: 90,
+      progressBarColor: "bg-yellow-500",
+    },
+
+    {
+      name: "Docker",
+      weight: 60,
+    },
+    {
       name: "Kubernetes",
-      wight: 30,
+      weight: 50,
+      progressBarColor: "bg-purple-500",
+    },
+    {
+      name: "Bootstrap",
+      weight: 85,
       progressBarColor: "bg-yellow-500",
     },
   ];

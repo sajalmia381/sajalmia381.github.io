@@ -22,7 +22,7 @@ export function progressAnimation(): AnimationTriggerMetadata {
       <div
         class="h-2 rounded-full"
         [ngClass]="data.progressBarColor || 'bg-green-400'"
-        [@progress]="{ value: animationState, params: { width: data.wight + '%' } }"
+        [@progress]="{ value: animationState, params: { width: data.weight + '%' } }"
       ></div>
     </div>
   `,

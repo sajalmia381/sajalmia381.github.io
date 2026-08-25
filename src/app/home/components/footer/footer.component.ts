@@ -11,6 +11,8 @@ import { distinctUntilChanged, map } from "rxjs/operators";
   animations: [flipAnimation({ duration: 1000 }), fadeInUpAnimation({ duration: 800 })],
 })
 export class FooterComponent extends ScrollComponent implements OnInit {
+  readonly currentYear = new Date().getFullYear();
+
   animationState = 0;
 
   ngOnInit(): void {

@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="hero_title">
       <span class="hero_title_sub">
-        @for (letter of grettingText; track i; let i = $index; let last = $last) {
+        @for (letter of greetingText; track i; let i = $index; let last = $last) {
           <span
             [@enterLetterAnim1]="{ value: '', params: { delay: 30 + i * 50 } }"
             [@letterAnim1]="{ value: animationState, params: { delay: i * 20 } }"
@@ -32,22 +32,24 @@
     <div class="hero_details">
       <!-- Professional Definition -->
       <p [@fadeInUp]="{ value: '', params: { delay: 800, duration: 800 } }">
-        I have more than eight years of experience as a Software Engineer. Currently I am working as a Senior Software Engineer at
-        <a class="hover:underline" target="_blank" href="https://netpower.no">NetPower</a>, leading Angular architecture for Certain QMS — a
-        quality management system for Norwegian industrial companies. Previously I spent three years at KloverCloud architecting enterprise
+        I have more than nine years of experience as a Software Engineer. Currently I am working as a Senior Software Engineer at
+        <a class="hover:underline" target="_blank" href="https://netpower.no">NetPower</a>, leading frontend architecture for Certain QMS —
+        a quality management system for industrial companies. Previously I spent nearly five years at KloverCloud architecting enterprise
         SaaS platforms. I also write on
         <a class="hover:underline" href="https://techincent.com">TechIncent</a>
       </p>
 
       <!-- Self Definition -->
       <p [@fadeInUp]="{ value: '', params: { delay: 1100, duration: 1000 } }">
-        Well, I would describe myself as somebody who is positive, happy and also resilient. I would say I'm the type of person who always
-        puts the needs of a team first. I am a creative problem solver. I always embraces positive change. I am trustworthy and reliable.
+        Most of my work sits at the intersection of two things: Angular architecture at scale, and shipping AI features into software that
+        has to survive an audit. In regulated contexts like ISO 9001 and ISO 27001, audit trails, approval workflows, and document control
+        are architectural requirements — not afterthoughts.
       </p>
 
       <!-- Personal Life -->
       <p [@fadeInUp]="{ value: '', params: { delay: 1600, duration: 1000 } }">
-        Outside of computer, I like to keep myself fit and active. Which in turn improves my concentration levels whilst.
+        Beyond my day job, I maintain open-source Angular packages such as as-prism and as-toastr, and built store-api — a free prototype
+        REST API that serves thousands of developers every month.
       </p>
 
       <ul [@fadeInUp]="{ value: '', params: { delay: 2000, duration: 1000 } }" class="social_media">
